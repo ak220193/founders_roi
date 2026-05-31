@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
 import { Outfit, Sora } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/common/Navbar";
 
 // ✅ Fonts (Optimized)
 const outfit = Outfit({
@@ -16,8 +16,8 @@ const sora = Sora({
 });
 
 // ✅ SEO Metadata
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.foundersroi.com"), // change later
+export const metadata = {
+  metadataBase: new URL("https://www.foundersroi.com"),
 
   title: {
     default: "Founders ROI | Business Consulting & Digital Growth Agency",
@@ -47,8 +47,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Founders ROI",
-    description:
-      "Scale your business with strategy, technology, and marketing.",
+    description: "Scale your business with strategy, technology, and marketing.",
     url: "https://www.foundersroi.com",
     siteName: "Founders ROI",
     images: [
@@ -66,8 +65,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Founders ROI",
-    description:
-      "Business consulting, SaaS solutions, and growth strategies.",
+    description: "Business consulting, SaaS solutions, and growth strategies.",
     images: ["/og-image.png"],
   },
 
@@ -81,17 +79,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
       className={`${outfit.variable} ${sora.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-white text-slate-900">
+      <body className="min-h-full">
+        <Navbar />
         {children}
 
         {/* ✅ Structured Data (SEO Boost) */}

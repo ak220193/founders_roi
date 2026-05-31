@@ -1,61 +1,55 @@
 @import "tailwindcss";
 
-/* ==========================================================================
-   🎨 Tailwind v4 Utilities & Component Directives
-   ========================================================================== */
-
 @layer base {
+  :root {
+    /* Base Obsidian Theme */
+    --bg-primary: #030202;
+    --bg-card: #0a0a0a;
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+    --border: #1f1f1f;
+
+    /* Accent & Brand Colors */
+    --accent: #BFF747; /* The Green growth pop */
+    --primary: #7c3aed; /* SaaS Purple */
+    --secondary: #06b6d4; /* SaaS Cyan */
+    
+    /* Gradients */
+    --gradient-tech: linear-gradient(135deg, #7c3aed, #06b6d4);
+  }
+
   body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
     font-family: var(--font-outfit), sans-serif;
-    background-color: #ffffff;
-    color: #0f172a;
-    line-height: 1.6;
+    transition: background-color 0.3s ease;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3 { 
     font-family: var(--font-sora), sans-serif;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    color: #0f172a;
-  }
-
-  p {
-    color: #64748b;
-    font-size: 1rem;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
+    color: var(--text-main);
   }
 }
 
-/* ==========================================================================
-   🧱 Reusable SaaS Components
-   ========================================================================== */
+@layer utilities {
+  /* The High-Impact Growth Button */
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl bg-[var(--accent)] text-black font-bold hover:brightness-110 transition-all;
+  }
+  
+  /* The Premium SaaS Card */
+  .card {
+    @apply p-8 rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] hover:border-[var(--primary)] transition-all;
+  }
 
-.btn-primary {
-  @apply px-6 py-3 rounded-xl bg-blue-600 text-white font-medium transition-all duration-300;
+  /* Tech Gradient for Branding */
+  .gradient-text {
+    background: var(--gradient-tech);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
-.btn-primary:hover {
-  @apply bg-blue-700;
-}
-
-.gradient-text {
-  background: linear-gradient(90deg, #1d4ed8, #38bdf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.section {
-  @apply max-w-7xl mx-auto px-6 py-20;
-}
-
-.card {
-  @apply p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition;
-}
-
-html {
-   scroll-behavior: smooth;
+html { 
+  scroll-behavior: smooth; 
 }
