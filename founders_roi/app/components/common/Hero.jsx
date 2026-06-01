@@ -9,7 +9,7 @@ export default function Hero() {
       {/* Glow Background */}
       <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-orange-500 opacity-20 blur-[140px] rounded-full"></div>
 
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-10 grid md:grid-cols-2 gap-12 items-center">
         {/* ✅ LEFT CONTENT */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
