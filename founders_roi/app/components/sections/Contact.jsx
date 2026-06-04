@@ -34,12 +34,12 @@ export default function Contact() {
           <div className="space-y-5">
             <div className="flex items-center gap-4">
               <FaPhoneAlt className="text-orange-500" />
-              <span className="text-gray-300">+91 98765 43210</span>
+              <span className="text-gray-300">+91-8754582502</span>
             </div>
 
             <div className="flex items-center gap-4">
               <FaEnvelope className="text-orange-500" />
-              <span className="text-gray-300">contact@foundersroi.com</span>
+              <span className="text-gray-300">foundersroi.in@gmail.com</span>
             </div>
 
             <div className="flex items-center gap-4">
