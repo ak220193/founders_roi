@@ -7,33 +7,39 @@ import { FaStar } from "react-icons/fa";
 const testimonials = [
   {
     name: "Aliens Photography",
-    logo: "/clientImages/aliens.png",
-    feedback: "Founders ROI helped us generate consistent leads and scale our photography business beyond expectations.",
+    logo: "/clientImages/AlienPhotography.png",
+    feedback:
+      "Founders ROI helped us generate consistent leads and scale our photography business beyond expectations.",
   },
   {
     name: "Candier Photography",
-    logo: "/clientImages/candier.png",
-    feedback: "Their marketing strategy completely changed our growth. We now get high-quality inquiries regularly.",
+    logo: "/clientImages/CandierPhotography.png",
+    feedback:
+      "Their marketing strategy completely changed our growth. We now get high-quality inquiries regularly.",
   },
   {
     name: "Capicture",
-    logo: "/clientImages/capicture.jpg",
-    feedback: "Professional team with strong execution. We saw measurable improvement in performance campaigns.",
+    logo: "/clientImages/Capicture.jpg",
+    feedback:
+      "Professional team with strong execution. We saw measurable improvement in performance campaigns.",
   },
   {
     name: "Carnival",
-    logo: "/clientImages/carnival.png",
-    feedback: "Great experience working with them. Their systems are built for real business growth.",
+    logo: "/clientImages/carnival-logo.png",
+    feedback:
+      "Great experience working with them. Their systems are built for real business growth.",
   },
   {
     name: "Chikmangalur Vibes",
-    logo: "/clientImages/chikmangalur.jpg",
-    feedback: "We increased our reach and bookings significantly after working with Founders ROI.",
+    logo: "/clientImages/chikmangalurVibes.jpg",
+    feedback:
+      "We increased our reach and bookings significantly after working with Founders ROI.",
   },
   {
     name: "Fresh Frames",
-    logo: "/clientImages/freshframes.jpg",
-    feedback: "Highly recommended for any brand looking to scale with performance marketing.",
+    logo: "/clientImages/freshframes.in.jpg",
+    feedback:
+      "Highly recommended for any brand looking to scale with performance marketing.",
   },
 ];
 
@@ -48,7 +54,6 @@ const secondRowExtended = [...secondRow, ...secondRow, ...secondRow];
 export default function Testimonials() {
   return (
     <section className="w-full bg-[#030202] text-white py-24 overflow-hidden relative">
-      
       {/* BACKGROUND AMBIENT GLOW */}
       <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-orange-500/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-purple-500/5 blur-[120px] rounded-full pointer-events-none" />
@@ -71,7 +76,6 @@ export default function Testimonials() {
       {/* --- MARQUEE ENGINE WRAPPER --- */}
       {/* Mask gradients create smooth fading edges on desktop screens */}
       <div className="relative flex flex-col gap-6 md:gap-8 w-full max-w-[100vw] sm:px-6 md:px-0 [mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)] md:[mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
-        
         {/* ROW 1: FLOWS LEFT TO RIGHT */}
         <div className="flex w-full overflow-hidden">
           <motion.div
@@ -105,7 +109,6 @@ export default function Testimonials() {
             ))}
           </motion.div>
         </div>
-
       </div>
     </section>
   );
@@ -117,7 +120,6 @@ function TestimonialCard({ item }) {
 
   return (
     <div className="w-[280px] sm:w-[360px] shrink-0 bg-[#0a0a0a] border border-[#1f1f1f] rounded-2xl p-6 relative group transition-colors duration-300 hover:border-orange-500/30">
-      
       {/* Subtle Container Internal Flare */}
       <div className="absolute inset-0 bg-gradient-to-br from-orange-500/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl" />
 
