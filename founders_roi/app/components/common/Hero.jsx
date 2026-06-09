@@ -51,7 +51,6 @@ export default function Hero() {
           muted
           playsInline
           className="absolute inset-0 h-full w-full object-cover opacity-60 select-none mix-blend-screen"
-          poster="/video-fallback.jpg"
           style={{ pointerEvents: "none" }}
         >
           <source src="/bg-vdo/1.mp4" type="video/mp4" />

@@ -48,7 +48,8 @@ export const metadata = {
 
   openGraph: {
     title: "Founders ROI",
-    description: "Scale your business with strategy, technology, and marketing.",
+    description:
+      "Scale your business with strategy, technology, and marketing.",
     url: "https://www.foundersroi.com",
     siteName: "Founders ROI",
     images: [
@@ -82,9 +83,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="h-full antialiased scroll-smooth">
+    <html
+      lang="en"
+      className="h-full antialiased scroll-smooth"
+      data-scroll-behavior="smooth"
+    >
       {/* FIX: Bind font variables directly to the body to clear preload warnings */}
-      <body className={`${outfit.variable} ${sora.variable} min-h-full bg-bg-primary text-white`}>
+      <body
+        className={`${outfit.variable} ${sora.variable} min-h-full bg-[#030202] text-white antialiased`}
+      >
         <Navbar />
         {children}
         <Footer />
@@ -98,7 +105,7 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               name: "Founders ROI",
               url: "https://www.foundersroi.com",
-              logo: "https://www.foundersroi.com/logo.png",
+              logo: "https://www.foundersroi.com/logo/logo.png", // Updated path to match your footer asset structure safely
             }),
           }}
         />

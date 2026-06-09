@@ -61,11 +61,12 @@ export default function Navbar() {
         >
           {/* BRAND LOGO AREA */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative h-10 w-10 transition-transform duration-300 group-hover:scale-105 md:h-12 md:w-12">
+            <div className="relative h-20 w-20 transition-transform duration-300 group-hover:scale-105 md:h-12 md:w-12">
               <Image
                 src={Logo}
                 alt="Founders ROI"
-                fill
+                width={50}
+                height={50}
                 priority
                 className="object-contain"
               />
