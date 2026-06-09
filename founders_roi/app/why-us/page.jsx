@@ -9,7 +9,7 @@ import ThirdCta from "../components/sections/WhyRoi/ThirdCta";
 
 export default function WhyUs() {
   return (
-    <div className="bg-black text-white py-10">
+    <div className= "text-white py-20">
       <AboutComponent />
       <MissionVision />
       <ProblemSoluttion />
