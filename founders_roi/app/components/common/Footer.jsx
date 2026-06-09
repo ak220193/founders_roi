@@ -1,100 +1,163 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 
 export default function Footer() {
+  const socialIcons = [
+    { Icon: FaInstagram, href: "#", label: "Instagram Link" },
+    { Icon: FaLinkedin, href: "#", label: "LinkedIn Profile" },
+    { Icon: FaTwitter, href: "#", label: "Twitter Feed" }
+  ];
+
   return (
-    <footer className="w-full bg-black text-white pt-20 px-6 md:px-16 relative overflow-hidden">
-      {/* BACKGROUND GLOW */}
-      <div className="absolute inset-0 bg-gradient-to-t from-orange-500/10 via-transparent to-transparent blur-2xl opacity-40" />
+    <footer className="w-full text-white pt-30 px-4 sm:px-8 lg:px-16 relative overflow-hidden select-none border-t border-neutral-900">
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-12 pb-12 border-b border-white/10 relative z-10">
-        {/* BRAND */}
-        <div>
-          <h2 className="text-2xl font-bold mb-4">
-            Founders <span className="text-orange-500">ROI</span>
-          </h2>
+      {/* ================= BACKGROUND GRAPHICS & AMBIENT GLOW ================= */}
+      {/* Upward Facing Deep Orange Horizon Light Flare */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-orange-500/[0.04] blur-[120px] rounded-full pointer-events-none" />
 
-          <p className="text-gray-400 text-sm leading-relaxed">
-            We help brands scale with performance-driven marketing systems,
-            creative strategies, and data-backed growth.
-          </p>
+      <div className="max-w-7xl mx-auto relative z-10">
+
+        {/* ================= TOP SECTION: CORE BRAND MAP OVERVIEW ================= */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-16 border-b border-neutral-900/80">
+
+          {/* COLUMN 1: CORPORATE DECK SYNOPSIS (Weight 5/12 fractions) */}
+          <div className="lg:col-span-5 space-y-6">
+
+            {/* ✅ LOGO + PREMIUM TYPOGRAPHY INLINE ROW WRAPPER */}
+            <div className="flex items-center gap-4 group/brand">
+              <Link href="/" className="flex flex-col items-center justify-center  transition-transform duration-300 hover:scale-[1.01]">
+
+                {/* Fixed Logo Frame Asset Box */}
+                <div className="relative w-40 h-40">
+                  <Image
+                    src="/logo/logo.png"
+                    alt="Founders ROI Symbol"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+
+                {/* Premium Corporate Brand Identity Text */}
+                <span className="text-xl sm:text-2xl lg:text-4xl font-black tracking-tight text-white transition-colors duration-300 ">
+                  Founders<span className="bg-gradient-to-r from-orange-400 via-amber-500 to-orange-600 bg-clip-text text-transparent ml-1" >ROI</span>
+                </span>
+              </Link>
+            </div>
+
+            <p className="text-neutral-400 text-sm font-light leading-relaxed max-w-sm">
+              We help brands scale with performance-driven marketing systems,
+              premium architecture implementations, and data-backed structural growth mechanics.
+            </p>
+          </div>
+
+          {/* COLUMN 2: INTERNAL ROUTING GRAPH (Weight 2/12 fractions) */}
+          <div className="lg:col-span-2 space-y-4">
+            <h3 className="text-xs text-neutral-500 font-bold uppercase tracking-widest">Quick Links</h3>
+            <ul className="space-y-2.5">
+              {[
+                { name: "Why Founders ROI", path: "/why-us" },
+                { name: "Services", path: "/services" },
+                { name: "Process", path: "/process" },
+                { name: "Clients", path: "/clients" },
+                { name: "Case Study", path: "/case-study" },
+                { name: "Contact", path: "/contact" }
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.path}
+                    className="inline-flex items-center gap-1 text-sm font-medium text-neutral-400 hover:text-orange-400 transition-colors duration-200 group/link"
+                  >
+                    <span>{link.name}</span>
+                    <ArrowUpRight size={12} className="text-neutral-600 opacity-0 -translate-x-1 translate-y-1 group-hover/link:opacity-100 group-hover/link:translate-x-0 group-hover/link:translate-y-0 transition-all duration-300" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* COLUMN 3: SERVICE EXPERTISE DOMAINS (Weight 2/12 fractions) */}
+          <div className="lg:col-span-2 space-y-4">
+            <h3 className="text-xs text-neutral-500 font-bold uppercase tracking-widest">Services</h3>
+            <ul className="space-y-2.5 text-sm font-medium text-neutral-400">
+              {["Branding & Identity", "Consulting Systems", "Tech Infrastructure", "Performance Marketing"].map((service) => (
+                <li
+                  key={service}
+                  className="hover:text-orange-400 transition-colors duration-200 cursor-pointer"
+                >
+                  {service}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* COLUMN 4: COMMS NODES + INTERACTIVE SOCIAL PANEL (Weight 3/12 fractions) */}
+          <div className="lg:col-span-3 space-y-4">
+            <h3 className="text-xs text-neutral-500 font-bold uppercase tracking-widest">Get in Touch</h3>
+            <div className="space-y-1.5">
+              <p className="text-sm font-semibold text-neutral-300 tracking-wide hover:text-orange-400 transition-colors cursor-pointer">
+                foundersroi.in@gmail.com
+              </p>
+              <p className="text-sm font-medium text-neutral-400 tracking-wide">
+                +91 87545 82502
+              </p>
+            </div>
+
+            {/* HIGH-END CAPSULE SOCIAL ARRAY MAP */}
+            <div className="flex gap-2.5 pt-2">
+              {socialIcons.map((social, i) => (
+                <motion.a
+                  key={i}
+                  href={social.href}
+                  aria-label={social.label}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-2.5 bg-neutral-950/80 border border-neutral-900 rounded-xl text-neutral-400 hover:text-black hover:bg-gradient-to-r hover:from-orange-400 hover:to-amber-500 hover:border-transparent transition-all duration-300 shadow-lg cursor-pointer"
+                >
+                  <social.Icon size={14} />
+                </motion.a>
+              ))}
+            </div>
+          </div>
+
         </div>
 
-        {/* QUICK LINKS */}
-        <div>
-          <h3 className="font-semibold mb-4 text-lg">Quick Links</h3>
-          <ul className="space-y-2 text-gray-400 text-sm">
-            <li>
-              <Link href="/" className="hover:text-orange-500">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/services" className="hover:text-orange-500">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link href="/process" className="hover:text-orange-500">
-                Process
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:text-orange-500">
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
+        {/* ================= BOTTOM BAR: SKEUOMORPHIC BRAND ATTRIBUTION ================= */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-8 text-neutral-500 text-xs font-medium">
 
-        {/* SERVICES */}
-        <div>
-          <h3 className="font-semibold mb-4 text-lg">Services</h3>
-          <ul className="space-y-2 text-gray-400 text-sm">
-            <li className="hover:text-orange-500 cursor-pointer">Meta Ads</li>
-            <li className="hover:text-orange-500 cursor-pointer">Google Ads</li>
-            <li className="hover:text-orange-500 cursor-pointer">
-              Creative Strategy
-            </li>
-            <li className="hover:text-orange-500 cursor-pointer">
-              Funnel Optimization
-            </li>
-          </ul>
-        </div>
+          <div>
+            © 2026 Founders ROI. All rights reserved.
+          </div>
 
-        {/* CONTACT + SOCIAL */}
-        <div>
-          <h3 className="font-semibold mb-4 text-lg">Get in Touch</h3>
-
-          <p className="text-gray-400 text-sm mb-3">contact@foundersroi.com</p>
-
-          <p className="text-gray-400 text-sm mb-5">+91 98765 43210</p>
-
-          {/* SOCIAL ICONS */}
-          <div className="flex gap-4">
-            {[FaInstagram, FaLinkedin, FaTwitter].map((Icon, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.2 }}
-                className="p-2 bg-white/5 rounded-full cursor-pointer hover:bg-orange-500 transition"
-              >
-                <Icon size={16} />
-              </motion.div>
-            ))}
+          {/* CO-BRANDED CREDIT FOOTNOTE FOOTER ATTACHMENT */}
+          <div className="flex items-center gap-1.5 text-neutral-400">
+            <span>Developed with</span>
+            <motion.span
+              animate={{ scale: [1, 1.15, 1] }}
+              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+              className="text-red-500 text-sm inline-block"
+            >
+              ❤️
+            </motion.span>
+            <a
+              href="https://www.webxode.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-white bg-neutral-900/80 border border-neutral-800 rounded-md px-2 py-1 hover:border-orange-500/40 hover:text-orange-400 transition-all duration-300 tracking-wide"
+            >
+              Webxode Technologies
+            </a>
+            <span className="text-neutral-600 font-light mx-0.5">|</span>
+            <span className="text-neutral-500 text-[11px]">Powered by Founder&apos;s ROI</span>
           </div>
         </div>
       </div>
-
-      {/* BOTTOM BAR */}
-      <div className="text-center text-gray-500 text-sm py-6 relative z-10">
-        © {new Date().getFullYear()} Founders ROI. All rights reserved.
-      </div>
-
-      {/* EXTRA GLOW */}
-      <div className="absolute bottom-0 right-10 w-40 h-40 bg-orange-500 opacity-20 blur-3xl rounded-full" />
     </footer>
   );
 }
