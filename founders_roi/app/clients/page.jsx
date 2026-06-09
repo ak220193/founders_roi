@@ -9,7 +9,7 @@ import VideoTestimonials from "../components/sections/Clients/VideoTestimonial";
 
 export default function Page() {
   return (
-    <main className="bg-black text-white">
+    <main className="bg-black text-white py-20">
       <ClientHero />
       <Industries />
       <ClientLogos />
