@@ -50,7 +50,7 @@ export default function Navbar() {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 px-4 lg:px-8 ${
+        className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 px-4 lg:px-6 ${
           scrolled ? "py-3" : "py-5"
         }`}
       >
@@ -76,7 +76,7 @@ export default function Navbar() {
             </div>
 
             <div className="flex flex-col">
-              <span className="text-sm font-bold tracking-widest text-white md:text-base">
+              <span className="text-lg font-bold tracking-widest text-white md:text-base">
                 FOUNDERS ROI
               </span>
               <span className="hidden text-[10px] tracking-wider text-zinc-400 lg:block">
@@ -118,7 +118,7 @@ export default function Navbar() {
               href="/contact"
               className="group relative inline-flex items-center justify-center gap-1.5 overflow-hidden rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-5 py-2.5 text-sm font-semibold text-white shadow-[0_4px_20px_rgba(249,115,22,0.3)] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_6px_24px_rgba(249,115,22,0.5)] active:scale-[0.98]"
             >
-              <span>Get Started</span>
+              <span>Book A Call</span>
               <ArrowRight
                 size={15}
                 className="transition-transform duration-300 group-hover:translate-x-0.5"
@@ -203,9 +203,9 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 py-4 font-semibold text-white shadow-[0_4px_24px_rgba(249,115,22,0.3)]"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-linear-to-r from-orange-500 to-amber-500 py-4 font-semibold text-white shadow-[0_4px_24px_rgba(249,115,22,0.3)]"
                 >
-                  <span>Get Started</span>
+                  <span>Book a Call</span>
                   <ArrowRight size={18} />
                 </Link>
                 <div className="flex justify-between text-xs text-zinc-500">

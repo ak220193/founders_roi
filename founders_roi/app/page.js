@@ -14,7 +14,7 @@ import Contact from "./components/sections/Contact";
 
 export default function Home() {
   return (
-    <section className="py-5">
+    <section className="">
       <Hero />
       <About/>
       <HeroAbout/>
