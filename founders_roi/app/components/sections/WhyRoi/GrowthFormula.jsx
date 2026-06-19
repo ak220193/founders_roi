@@ -33,13 +33,13 @@ export default function GrowthFormula() {
 
   return (
     <section className="relative py-32 px-4 sm:px-8 lg:px-16 bg-[#030202] text-white overflow-hidden select-none border-b border-neutral-900/40">
-      
+
       {/* ================= BACKGROUND GRADIENT MESH ENGINE ================= */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-orange-500/5 via-transparent to-transparent blur-[160px] pointer-events-none" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#141414_1px,transparent_1px),linear-gradient(to_bottom,#141414_1px,transparent_1px)] bg-[size:4.5rem_4.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        
+
         {/* ================= HEADER BLOCK ================= */}
         <div className="text-center mb-24 flex flex-col items-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900/60 px-4 py-1.5 text-xs font-semibold tracking-wider text-orange-400 uppercase backdrop-blur-xl mb-4 shadow-inner">
@@ -76,7 +76,7 @@ export default function GrowthFormula() {
               >
                 {/* 🌟 LIVE ANIMATED CASING LIGHT TRACK 🌟 */}
                 <div className="absolute inset-0 p-[1px] rounded-2xl pointer-events-none z-0">
-                  <motion.div 
+                  <motion.div
                     animate={isHovered ? { rotate: 360 } : { rotate: 0 }}
                     transition={{
                       duration: 5,
@@ -92,27 +92,17 @@ export default function GrowthFormula() {
 
                 {/* Content Elements forced above background mask stacking contexts */}
                 <div className="relative z-10 flex flex-col justify-between h-full space-y-8">
-                  
+
                   <div className="space-y-6">
                     {/* TOP STATUS SUB-HEADER BAR */}
                     <div className="flex items-center justify-between gap-4">
                       {/* Premium Icon Container Node */}
-                      <div className={`p-3.5 rounded-xl border transition-all duration-500 ${
-                        isHovered 
-                          ? "bg-gradient-to-r from-orange-500 to-amber-500 text-black border-transparent shadow-lg rotate-[-4deg]" 
+                      <div className={`p-3.5 rounded-xl border transition-all duration-500 ${isHovered
+                          ? "bg-gradient-to-r from-orange-500 to-amber-500 text-black border-transparent shadow-lg rotate-[-4deg]"
                           : "bg-neutral-900 border-neutral-800 text-orange-400"
-                      }`}>
+                        }`}>
                         <Icon size={20} />
                       </div>
-                      
-                      {/* Glassmorphic Layer Token Index Badge */}
-                      <span className={`text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full border transition-all duration-500 ${
-                        isHovered 
-                          ? "bg-orange-500 text-black border-transparent font-extrabold" 
-                          : "bg-neutral-900/60 border-neutral-800 text-neutral-500"
-                      }`}>
-                        {item.layerNumber}
-                      </span>
                     </div>
 
                     {/* TEXT INFORMATION AREA */}
@@ -125,14 +115,11 @@ export default function GrowthFormula() {
                       </p>
                     </div>
                   </div>
-
                   {/* Fine Bottom Interactive Tracker Bar */}
                   <div className="relative w-full h-[1px] bg-neutral-900 overflow-hidden mt-4">
                     <div className={`absolute inset-0 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 transition-all duration-500 ease-out ${isHovered ? 'w-full' : 'w-0'}`} />
                   </div>
-
                 </div>
-
               </motion.div>
             );
           })}
