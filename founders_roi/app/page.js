@@ -10,12 +10,14 @@ import Clients from "./components/sections/Clients";
 import Testimonials from "./components/sections/Testimonial";
 import CTA from "./components/common/CTA";
 import Contact from "./components/sections/Contact";
+import ClientMarque from "./components/sections/ClientMarque";
 
 
 export default function Home() {
   return (
     <section className="">
       <Hero />
+      <ClientMarque/>
       <About/>
       <HeroAbout/>
       <CoreServices/>

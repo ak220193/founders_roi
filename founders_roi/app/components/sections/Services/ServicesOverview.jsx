@@ -43,7 +43,7 @@ const capabilities = [
   },
   {
     phase: "04",
-    category: "Engineering Suite",
+    category: "Tech Suite",
     title: "Enterprise Web Architecture",
     desc: "Blazing-fast, modern web platforms built with Next.js, optimized for perfect SEO performance, core web vitals, and scalable conversion mechanics.",
     icon: Globe,
@@ -52,7 +52,7 @@ const capabilities = [
   },
   {
     phase: "05",
-    category: "Engineering Suite",
+    category: "Tech Suite",
     title: "Mobile App Ecosystems",
     desc: "Premium, cross-platform mobile application development delivering native performance, smooth gesture tracking, and clean offline caching layers.",
     icon: Smartphone,
@@ -61,7 +61,7 @@ const capabilities = [
   },
   {
     phase: "06",
-    category: "Engineering Suite",
+    category: "Tech Suite",
     title: "Custom Web Applications",
     desc: "Tailored software architecture, secure database infrastructure, and automated background API tasks built cleanly to power unique brand operational workflows.",
     icon: Code2,
@@ -164,9 +164,6 @@ export default function SixCardsServicesOverview() {
                   
                   {/* CARD ACCENT SUB-BAR */}
                   <div className="flex items-center justify-between border-b border-neutral-900/60 pb-4">
-                    <span className="text-xs font-bold text-neutral-600 uppercase tracking-widest font-mono">
-                      {node.phase}
-                    </span>
                     <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-neutral-900 border transition-all duration-300 ${
                       isEffectivelyLive ? 'text-orange-400 border-orange-500/10' : 'border-neutral-800/80 text-neutral-400'
                     }`}>

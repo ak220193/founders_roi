@@ -136,7 +136,7 @@ export default function ProcessTimeline() {
           />
         </div>
 
-        <div className="absolute left-6 top-6 bottom-6 w-[1px] bg-neutral-900 -translate-x-1/2 z-0 sm:hidden">
+        <div className="absolute left-6 top-6 bottom-6 w-[2px] bg-neutral-900 -translate-x-1/2 z-0 sm:hidden">
           <motion.div 
             style={{ scaleY: scaleYSpring }}
             className="absolute inset-0 bg-orange-500 rounded-full origin-top"
@@ -198,13 +198,11 @@ export default function ProcessTimeline() {
                     <div className="space-y-3 lg:space-y-4 relative z-10">
                       <div className="flex items-center gap-3">
                         <div className={`p-2.5 rounded-xl border transition-all duration-500 ${
-                          isLive ? "bg-orange-500/10 border-orange-500/20 text-orange-400 scale-105" : "bg-neutral-900 border-neutral-800 text-neutral-500"
+                          isLive ? "bg-orange-500/10 border-orange-500/20 text-orange-400 scale-105" : "bg-neutral-900 border-neutral-800 text-orange-500"
                         }`}>
                           <IconComponent size={18} />
                         </div>
-                        <span className={`text-[11px] font-bold uppercase tracking-widest transition-colors duration-300 ${isLive ? 'text-orange-400' : 'text-neutral-500'}`}>
-                          Phase {node.step}
-                        </span>
+                        
                       </div>
                       
                       <h3 className={`text-xl lg:text-2xl font-black tracking-tight transition-colors duration-500 ${isLive ? 'text-orange-400' : 'text-white'}`}>

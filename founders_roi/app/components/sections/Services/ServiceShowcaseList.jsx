@@ -14,7 +14,7 @@ const comprehensiveServices = [
     desc: "We skip vanity impressions. Your acquisition funnel is engineered around quantitative performance metrics across Meta, Google, and programmatics to pull high-value enterprise accounts.",
     deliverables: ["Meta Ad Architecture", "Google Search Optimization", "Retargeting Matrices"],
     resultMetric: "4.2x Average ROAS",
-    imgSrc: "/clientImages/aliens.png" // Swap to your showcase preview renders safely
+    imgSrc: "/Services/Capicure.jpeg" 
   },
   {
     id: "sales",
@@ -34,7 +34,7 @@ const comprehensiveServices = [
     desc: "Stop competing down in price wars. We build high-impact brand identities, corporate positions, and design systems that transform your company from a basic alternative into a category choice.",
     deliverables: ["Market Positioning Frameworks", "High-End Corporate Design Rules", "Asset Layout Toolkits"],
     resultMetric: "Premium Price Command",
-    imgSrc: "/clientImages/candier.png"
+    imgSrc: "/clientImages/TH.png"
   },
   {
     id: "technology",
@@ -75,7 +75,7 @@ export default function ServiceShowcaseList() {
                 
                 {/* Simulated Bento Showcase Shell Container */}
                 <div className="relative w-full h-full rounded-2xl bg-[#090909] border border-neutral-900 overflow-hidden flex items-center justify-center p-8">
-                  <div className="relative w-36 h-36 opacity-30 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105">
+                  <div className="relative w-full h-full   group-hover:opacity-100 transition-all duration-500 group-hover:scale-105">
                     <Image
                       src={encodeURI(service.imgSrc)}
                       alt={`${service.title} verification schematic image`}
