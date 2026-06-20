@@ -23,7 +23,7 @@ const allBrands = [
 
 const ClientMarquee = () => {
   return (
-    <section className="py-24 bg-black overflow-hidden relative">
+    <section className="py-20 overflow-hidden relative">
       {/* Refined Ambient Glows */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-orange-600/[0.08] blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-orange-900/[0.05] blur-[120px] rounded-full pointer-events-none" />

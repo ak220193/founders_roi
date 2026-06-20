@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { motion, useSpring, useTransform, useInView } from "framer-motion";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import Link from "next/link";
+import heroimg from "@/public/hero/ref1.png";
+import Image from "next/image";
 
 // 1. Counter Helper Component
 function Counter({ value, label }) {
@@ -23,11 +25,16 @@ function Counter({ value, label }) {
   }, [isInView, spring, numericValue]);
 
   return (
-    <div ref={ref} className="text-center group">
-      <motion.p className="text-2xl sm:text-4xl font-black text-white mb-2">
+    <div 
+      ref={ref} 
+      className="group relative flex flex-col justify-center items-center p-5 sm:p-6 rounded-2xl border border-white/5 bg-neutral-900/20 backdrop-blur-md transition-all duration-300 hover:border-orange-500/20 hover:bg-neutral-900/40 text-center shadow-lg"
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl pointer-events-none" />
+      
+      <motion.p className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-white via-white to-neutral-400 bg-clip-text text-transparent mb-1 tracking-tight group-hover:from-orange-400 group-hover:to-amber-500 transition-all duration-300">
         {display}
       </motion.p>
-      <p className="text-[10px] text-white/40 uppercase tracking-widest font-semibold group-hover:text-orange-500 transition-colors duration-300">
+      <p className="text-[10px] text-white/40 uppercase tracking-[0.15em] font-bold group-hover:text-white/70 transition-colors duration-300">
         {label}
       </p>
     </div>
@@ -35,8 +42,7 @@ function Counter({ value, label }) {
 }
 
 export default function Hero() {
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const words = ["Branding", "Consulting", "Sales Systems", "Tech Infrastructure"];
+  const words = useMemo(() => ["Branding", "Consulting", "Sales Systems", "Tech Infrastructure"], []);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -65,65 +71,102 @@ export default function Hero() {
   }, [displayedText, isDeleting, currentWordIndex, words]);
 
   return (
-    <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-black py-24 px-6">
+    <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-black pt-32 pb-20 sm:pt-40 sm:pb-28 px-4 sm:px-6 lg:px-8">
       
       {/* BACKGROUND ELEMENTS */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <video
-          autoPlay loop muted playsInline
-          className="absolute inset-0 h-full w-full object-cover opacity-60 select-none mix-blend-screen"
-          style={{ pointerEvents: "none" }}
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover opacity-15 select-none mix-blend-screen"
         >
           <source src="/bg-vdo/1.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black" />
-        <div className="absolute top-1/2 right-[-10%] -z-10 h-150 w-150 lg:h-187.5 lg:w-187.5 -translate-y-1/2 rounded-full bg-orange-600/15 blur-[140px]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black" />
+        <div className="absolute top-1/4 lg:top-1/2 right-1/2 lg:right-[-5%] -z-10 h-[300px] w-[300px] sm:h-[500px] sm:w-[500px] lg:h-[700px] lg:w-[700px] -translate-y-1/2 translate-x-1/2 lg:translate-x-0 rounded-full bg-orange-600/10 blur-[80px] sm:blur-[130px]" />
       </div>
 
-      {/* SINGLE COLUMN CONTAINER */}
-      <div className="w-full max-w-4xl relative z-10 flex flex-col items-center text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+      {/* MASTER CONTAINER */}
+      <div className="w-full max-w-7xl relative z-10 flex flex-col gap-12 sm:gap-16 lg:gap-24">
+        
+        {/* UPPER CONTENT GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 lg:gap-12 items-center">
+          
+          {/* LEFT COLUMN: TEXT CONTEXT */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col items-center lg:items-start text-center lg:text-left w-full"
+          >
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-neutral-900/60 px-3.5 py-1.5 text-[11px] font-semibold tracking-wider text-orange-400 uppercase backdrop-blur-md mb-6 shadow-inner">
+              <Sparkles size={12} className="text-orange-400 shrink-0" />
+              <span>Growth Engineering • Scale Ecosystem</span>
+            </div>
+
+            {/* Heading */}
+            <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl md:text-6xl leading-[1.15] sm:leading-[1.1] mb-6">
+              We Build NxtGen <br />
+              <span className="relative inline-block bg-gradient-to-r from-orange-400 via-amber-500 to-orange-600 bg-clip-text text-transparent min-h-[1.2em]">
+                {displayedText}
+                <span className="absolute -right-2 top-[5%] inline-block w-0.5 sm:w-1 h-[85%] bg-orange-500" />
+              </span> <br />
+              For Modern Brands.
+            </h1>
+
+            {/* Description */}
+            <p className="max-w-xl text-sm sm:text-base text-neutral-400 leading-relaxed mb-8 px-2 sm:px-0">
+              Founders ROI helps businesses dominate through precise marketing, branding, sales systems, automation, creative strategy, business development, and scalable performance infrastructure.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 w-full sm:w-auto px-4 sm:px-0">
+              <Link href="/contact" className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-8 py-4 text-sm sm:text-base font-bold text-white shadow-[0_4px_25px_rgba(249,115,22,0.25)] transition-all hover:scale-105 active:scale-95">
+                Build Your Idea <ArrowUpRight size={16} />
+              </Link>
+              <Link href="/why-us" className="w-full sm:w-auto flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-8 py-4 text-sm sm:text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10 active:scale-95">
+                Our Strategy
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* RIGHT COLUMN: HERO IMAGE REF PANEL */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            className="relative w-full h-[260px] sm:h-[380px] lg:h-[480px] rounded-3xl overflow-hidden border border-white/5 bg-neutral-900/10 backdrop-blur-sm shadow-[0_20px_50px_rgba(0,0,0,0.5)] group order-2 lg:order-none"
+          >
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20 z-10" />
+            <Image 
+              src={heroimg} 
+              alt="Founders ROI Infrastructure Reference" 
+              fill
+              priority
+              className="object-contain p-4 sm:p-6 drop-shadow-[0_10px_30px_rgba(249,115,22,0.08)] transition-transform duration-700 group-hover:scale-[1.01]"
+            />
+          </motion.div>
+
+        </div>
+
+        {/* BOTTOM SECTION: METRICS BENTO GRID */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="flex flex-col items-center"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="w-full border-t border-white/10 pt-10 sm:pt-14"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold tracking-wider text-orange-400 uppercase backdrop-blur-md mb-8">
-            <Sparkles size={12} className="animate-pulse" />
-            <span>Growth Engineering • Scale Ecosystem</span>
-          </div>
-
-          <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-8">
-            We Build NxtGen <br />
-            <span className="relative inline-block bg-gradient-to-r from-orange-400 via-amber-500 to-orange-600 bg-clip-text text-transparent min-h-[1.2em]">
-              {displayedText}
-              <span className="absolute -right-2 top-[5%] inline-block w-1 h-[85%] bg-orange-500 animate-[pulse_0.8s_infinite]" />
-            </span> <br />
-            For Modern Brands.
-          </h1>
-
-          <p className="max-w-2xl text-base sm:text-lg text-white/60 leading-relaxed mb-12">
-            Founders ROI helps businesses dominate through precise marketing, branding, sales systems, automation, creative strategy, business development, and scalable performance infrastructure.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-20">
-            <Link href="/contact" className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-8 py-4 text-base font-bold text-white shadow-[0_4px_30px_rgba(249,115,22,0.3)] transition-all hover:scale-105">
-              Build Your Idea <ArrowUpRight size={18} />
-            </Link>
-            <Link href="/why-us" className="w-full sm:w-auto flex items-center justify-center rounded-full border border-white/10 bg-transparent px-8 py-4 text-base font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/5">
-              Our Strategy
-            </Link>
-          </div>
-
-          {/* LIVE METRICS */}
-          <div className="border-t border-white/10 pt-12 grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-3xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
             <Counter value="8X" label="Revenue Growth" />
             <Counter value="6000%" label="ROAS Delivered" />
             <Counter value="100M" label="Views Generated" />
             <Counter value="3.3 CR" label="Revenue Generated" />
           </div>
-
         </motion.div>
+
       </div>
     </section>
   );
