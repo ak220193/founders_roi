@@ -1,7 +1,6 @@
 import ClientHero from "../components/sections/Clients/ClientHero";
 import ClientLogos from "../components/sections/Clients/ClientLogos";
 import Cta from "../components/sections/Clients/Cta";
-
 import Industries from "../components/sections/Clients/Industries";
 import Results from "../components/sections/Clients/Results";
 import Testimonials from "../components/sections/Clients/Testimonial";
@@ -12,7 +11,7 @@ export default function Page() {
     <main className="bg-black text-white py-20">
       <ClientHero />
       <Industries />
-      <ClientLogos />
+
       <Results />
       <Testimonials />
       <VideoTestimonials />

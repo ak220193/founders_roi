@@ -2,48 +2,42 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  Sparkles, ArrowRight, Building2, Globe, Cpu, Zap, Activity, 
-  ShieldCheck, Target, Camera, Briefcase, Star 
-} from "lucide-react";
+import Image from "next/image";
+import { Sparkles, ArrowRight } from "lucide-react";
 
 const marqueeRowOne = [
-  { name: "Twinkle Holidays", icon: Globe },
-  { name: "Triberry Studios", icon: Camera },
-  { name: "Carnival Studios", icon: Star },
-  { name: "AJ Uday Photography", icon: Activity },
-  { name: "AK Photography", icon: Cpu },
-  { name: "Lexa Holidays", icon: ShieldCheck },
-  { name: "Fresh Frames Inn", icon: Zap },
-  { name: "House Of Memoriez", icon: Briefcase },
-  { name: "Candier Photography", icon: Target },
-  { name: "Capicture Studios", icon: Building2 },
+  { name: "Aliens Photography", logo: "/clientImages/AlienPhotography.png" },
+  { name: "Candier Photography", logo: "/clientImages/CandierPhotography.png" },
+  { name: "Capicture", logo: "/clientImages/Capicture.jpg" },
+  { name: "Carnival", logo: "/clientImages/Carnival.png" },
+  { name: "Chikmangalur Vibes", logo: "/clientImages/chikmangalurVibes.jpg" },
+  { name: "EWS Logo", logo: "/clientImages/EWS logo.png" },
+  { name: "Fresh Frames", logo: "/clientImages/freshframes.in.jpg" },
+  { name: "Leo Photography", logo: "/clientImages/LeoPhotogrpahy.jpg" },
 ];
 
 const marqueeRowTwo = [
-  { name: "Vs Photography", icon: Camera },
-  { name: "Lights & Hearts", icon: Star },
-  { name: "Hi Proteins", icon: Activity },
-  { name: "Elite Wedding Stories", icon: Sparkles },
-  { name: "Magic Lens", icon: Cpu },
-  { name: "Zero One Photography", icon: Globe },
-  { name: "Chikmangalur Vibes", icon: Zap },
-  { name: "Splash Eventia", icon: Briefcase },
-  { name: "Studio 4 Creative", icon: Target },
-  { name: "IFS - Infocus", icon: Building2 },
+  { name: "Hi Proteins", logo: "/clientImages/Hiprotein.png" },
+  { name: "House of Memories", logo: "/clientImages/HouseofMemories.jpeg" },
+  { name: "L & H", logo: "/clientImages/L&H.png" },
+  { name: "Lexa Holidays", logo: "/clientImages/Lexa Holidays.jpeg" },
+  { name: "S4C", logo: "/clientImages/S4C.png" },
+  { name: "Splash Eventia", logo: "/clientImages/SplashEventia.jpg" },
+  { name: "TH", logo: "/clientImages/TH.png" },
+  { name: "Triberry Studios", logo: "/clientImages/triberrystudioslogo.png" },
 ];
 
 export default function ClientHero() {
   return (
     <section className="w-full bg-[#030202] text-white pt-36 pb-24 px-4 sm:px-8 lg:px-16 relative overflow-hidden select-none border-b border-neutral-900/60 max-w-7xl mx-auto">
-      
+
       {/* BACKGROUND EFFECTS */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-gradient-to-b from-orange-500/[0.05] via-transparent to-transparent blur-[140px] pointer-events-none" />
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#141414_1px,transparent_1px),linear-gradient(to_bottom,#141414_1px,transparent_1px)] bg-[size:4.5rem_4.5rem] opacity-30 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto text-center relative z-10 flex flex-col items-center space-y-8 mb-24">
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           className="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900/60 px-4 py-1.5 text-xs font-semibold tracking-wider text-orange-400 uppercase backdrop-blur-xl shadow-inner"
@@ -73,38 +67,55 @@ export default function ClientHero() {
 
       {/* MARQUEE SYSTEM */}
       <div className="relative w-full overflow-hidden flex flex-col gap-6 mt-12 z-10 max-w-[90rem] mx-auto py-10 bg-neutral-950/[0.05] backdrop-blur-3xl rounded-3xl border border-neutral-900/50">
-        
+
         {/* ROW 1: LEFT */}
-        <div className="flex w-max">
+        <div className="flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)]">
           <motion.div
-            animate={{ x: [0, -500] }}
-            transition={{ ease: "linear", duration: 25, repeat: Infinity }}
-            className="flex gap-6 pr-6"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ ease: "linear", duration: 28, repeat: Infinity }}
+            className="flex gap-6 pr-6 min-w-max"
           >
             {[...marqueeRowOne, ...marqueeRowOne].map((brand, idx) => (
-              <div key={`r1-${idx}`} className="flex items-center gap-3 px-6 py-3 rounded-xl border border-neutral-800/50 bg-neutral-900/20 backdrop-blur-sm text-neutral-400 hover:border-orange-500/30 transition-all duration-300">
-                <brand.icon size={16} className="text-orange-500" />
-                <span className="text-sm font-bold uppercase tracking-wider whitespace-nowrap">{brand.name}</span>
+              <div key={`r1-${idx}`} className="relative h-20 w-44 rounded-2xl bg-neutral-900/30 backdrop-blur-md flex items-center justify-center transition-all duration-300 group overflow-hidden border border-neutral-900/40 hover:border-orange-500/20 shadow-md">
+                <div className="relative w-32 h-12 transition-all duration-300 group-hover:scale-[1.04]">
+                  <Image
+                    src={encodeURI(brand.logo)}
+                    alt={brand.name}
+                    fill
+                    sizes="128px"
+                    className="object-contain filter brightness-100 contrast-100"
+                    unoptimized
+                  />
+                </div>
               </div>
             ))}
           </motion.div>
         </div>
 
         {/* ROW 2: RIGHT */}
-        <div className="flex w-max justify-end">
+        <div className="flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)]">
           <motion.div
-            animate={{ x: [-500, 0] }}
-            transition={{ ease: "linear", duration: 25, repeat: Infinity }}
-            className="flex gap-6 pr-6"
+            animate={{ x: ["-50%", "0%"] }}
+            transition={{ ease: "linear", duration: 28, repeat: Infinity }}
+            className="flex gap-6 pr-6 min-w-max"
           >
             {[...marqueeRowTwo, ...marqueeRowTwo].map((brand, idx) => (
-              <div key={`r2-${idx}`} className="flex items-center gap-3 px-6 py-3 rounded-xl border border-neutral-800/50 bg-neutral-900/20 backdrop-blur-sm text-neutral-400 hover:border-orange-500/30 transition-all duration-300">
-                <brand.icon size={16} className="text-orange-500" />
-                <span className="text-sm font-bold uppercase tracking-wider whitespace-nowrap">{brand.name}</span>
+              <div key={`r2-${idx}`} className="relative h-20 w-44 rounded-2xl bg-neutral-900/30 backdrop-blur-md flex items-center justify-center transition-all duration-300 group overflow-hidden border border-neutral-900/40 hover:border-orange-500/20 shadow-md">
+                <div className="relative w-32 h-12 transition-all duration-300 group-hover:scale-[1.04]">
+                  <Image
+                    src={encodeURI(brand.logo)}
+                    alt={brand.name}
+                    fill
+                    sizes="128px"
+                    className="object-contain filter brightness-100 contrast-100"
+                    unoptimized
+                  />
+                </div>
               </div>
             ))}
           </motion.div>
         </div>
+
       </div>
     </section>
   );

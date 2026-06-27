@@ -1,84 +1,157 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
-import { Star, ShieldCheck, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { FaStar } from "react-icons/fa";
 
 const testimonials = [
   {
-    name: "Aman Gupta",
-    role: "Founder, Triberry Studios",
-    text: "The technical architecture they implemented didn't just scale our operations—it completely redefined our conversion benchmarks. Absolutely world-class engineering.",
-    platform: "Google",
+    name: "Aliens Photography",
+    logo: "/clientImages/AlienPhotography.png",
+    feedback:
+      "Founders ROI helped us generate consistent leads and scale our photography business beyond expectations.",
   },
   {
-    name: "Sarah Jenkins",
-    role: "Operations Lead, Lexa Holidays",
-    text: "Before partnering with them, our funnel was leaking high-intent traffic. Now, our acquisition costs have dropped by 50% while revenue has tripled.",
-    platform: "Trustpilot",
+    name: "Candier Photography",
+    logo: "/clientImages/CandierPhotography.png",
+    feedback:
+      "Their marketing strategy completely changed our growth. We now get high-quality inquiries regularly.",
   },
   {
-    name: "Vikram R.",
-    role: "Director, Carnival Studios",
-    text: "Most agencies give you fluff. These guys gave us a growth engine. The systems are robust, secure, and built for enterprise-level scale.",
-    platform: "Google",
+    name: "Capicture",
+    logo: "/clientImages/Capicture.jpg",
+    feedback:
+      "Professional team with strong execution. We saw measurable improvement in performance campaigns.",
+  },
+  {
+    name: "Carnival",
+    logo: "/clientImages/carnival-logo.png",
+    feedback:
+      "Great experience working with them. Their systems are built for real business growth.",
+  },
+  {
+    name: "Chikmangalur Vibes",
+    logo: "/clientImages/chikmangalurVibes.jpg",
+    feedback:
+      "We increased our reach and bookings significantly after working with Founders ROI.",
+  },
+  {
+    name: "Fresh Frames",
+    logo: "/clientImages/freshframes.in.jpg",
+    feedback:
+      "Highly recommended for any brand looking to scale with performance marketing.",
   },
 ];
 
+// Split data evenly into two distinct tracks for staggered directional flow
+const firstRow = testimonials.slice(0, Math.ceil(testimonials.length / 2));
+const secondRow = testimonials.slice(Math.ceil(testimonials.length / 2));
+
+// Duplicate rows to guarantee seamless wrapping animations without blank frames
+const firstRowExtended = [...firstRow, ...firstRow, ...firstRow];
+const secondRowExtended = [...secondRow, ...secondRow, ...secondRow];
+
 export default function Testimonials() {
   return (
-    <section className="w-full bg-[#030202] text-white py-32 px-4 sm:px-8 lg:px-16 relative overflow-hidden border-t border-neutral-900/60">
-      
-      {/* BACKGROUND EFFECTS */}
-      <div className="absolute -top-[20%] -left-[10%] w-[600px] h-[600px] bg-orange-500/[0.03] blur-[140px] pointer-events-none" />
+    <section className="max-w-7xl mx-auto w-full text-white py-20 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden relative">
+      {/* BACKGROUND AMBIENT GLOW */}
+      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-orange-500/10 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-purple-400/10 blur-[110px] rounded-full pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">
-            Loved by <span className="bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent">Industry Leaders</span>
+      <div className="px-6 md:px-16 mb-16">
+        {/* HEADER */}
+        <div className="text-center">
+          <p className="text-orange-500 uppercase tracking-widest text-xs sm:text-sm font-bold mb-3">
+            Testimonials
+          </p>
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 tracking-tight">
+            What Our <span className="text-orange-500">Clients Say</span>
           </h2>
-          <p className="text-neutral-500 font-medium">Real results from partners who scaled their vision.</p>
+          <p className="text-gray-400 max-w-2xl mx-auto font-light text-sm sm:text-base">
+            Real feedback from brands we’ve helped grow, automate, and scale.
+          </p>
+        </div>
+      </div>
+
+      {/* --- MARQUEE ENGINE WRAPPER --- */}
+      {/* Mask gradients create smooth fading edges on desktop screens */}
+      <div className="relative flex flex-col gap-6 md:gap-8 w-full max-w-[100vw] sm:px-6 md:px-0 mask-[linear-gradient(to_right,transparent,white_15%,white_85%,transparent)] md:mask-[linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
+        {/* ROW 1: FLOWS LEFT TO RIGHT */}
+        <div className="flex w-full overflow-hidden">
+          <motion.div
+            animate={{ x: ["0%", "-33.33%"] }}
+            transition={{
+              ease: "linear",
+              duration: 25,
+              repeat: Infinity,
+            }}
+            className="flex gap-6 pr-6 shrink-0"
+          >
+            {firstRowExtended.map((item, i) => (
+              <TestimonialCard item={item} key={`row1-${i}`} />
+            ))}
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15, duration: 0.5 }}
-              className="group relative p-8 rounded-3xl bg-[#060606] border border-neutral-900 hover:border-orange-500/30 transition-all duration-500 flex flex-col justify-between"
-            >
-              {/* STAR RATING */}
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} className="fill-orange-500 text-orange-500" />
-                ))}
-              </div>
-
-              {/* TESTIMONIAL TEXT */}
-              <p className="text-neutral-300 text-sm leading-relaxed mb-8 flex-grow">
-                &quot;{t.text}&quot;
-              </p>
-
-              {/* FOOTER */}
-              <div className="flex items-center justify-between border-t border-neutral-800/50 pt-6">
-                <div>
-                  <h4 className="font-bold text-white text-sm">{t.name}</h4>
-                  <p className="text-[10px] uppercase tracking-widest text-neutral-600 font-bold mt-0.5">{t.role}</p>
-                </div>
-                
-                {/* TRUST BADGE */}
-                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800">
-                  <ShieldCheck size={12} className="text-orange-500" />
-                  <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider">{t.platform}</span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+        {/* ROW 2: FLOWS RIGHT TO LEFT */}
+        <div className="flex w-full overflow-hidden">
+          <motion.div
+            animate={{ x: ["-33.33%", "0%"] }}
+            transition={{
+              ease: "linear",
+              duration: 25,
+              repeat: Infinity,
+            }}
+            className="flex gap-6 pr-6 shrink-0"
+          >
+            {secondRowExtended.map((item, i) => (
+              <TestimonialCard item={item} key={`row2-${i}`} />
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
+  );
+}
+
+// ✅ Extracted Modular Card Component to keep code highly maintainable & clean
+function TestimonialCard({ item }) {
+  const safeLogoPath = encodeURI(item.logo);
+
+  return (
+    <div className="w-80 sm:w-90 shrink-0 bg-bg-card border border-border-custom rounded-2xl p-6 relative group transition-colors duration-300 hover:border-orange-500/30">
+      {/* Subtle Container Internal Flare */}
+      <div className="absolute inset-0 bg-linear-to-br from-orange-500/2 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl" />
+
+      {/* HEADER: LOGO & RATING */}
+      <div className="flex items-center justify-between gap-4 mb-5">
+        <div className="relative w-20 h-20">
+          <Image
+            src={safeLogoPath}
+            alt={`${item.name} branding logo`}
+            fill
+            sizes="80px"
+            className="object-contain transition-all duration-300"
+          />
+        </div>
+        <div className="flex gap-0.5 text-orange-500">
+          {[...Array(5)].map((_, idx) => (
+            <FaStar key={idx} size={12} />
+          ))}
+        </div>
+      </div>
+
+      {/* FEEDBACK COPY */}
+      <p className="text-gray-400 text-sm leading-relaxed mb-6 group-hover:text-gray-300 transition-colors duration-300 min-h-[64px]">
+        “{item.feedback}”
+      </p>
+
+      {/* ACCOUNT AUTHOR */}
+      <div className="border-t border-border-custom pt-4">
+        <p className="text-sm font-semibold text-white tracking-wide">
+          {item.name}
+        </p>
+      </div>
+    </div>
   );
 }
