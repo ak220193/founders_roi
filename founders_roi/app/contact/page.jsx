@@ -6,7 +6,7 @@ import Contact from "../components/sections/Contact";
 
 const page = () => {
   return (
-    <main className="bg-[#030202] py-20">
+    <main className="bg-bg-primary py-20">
       <ContactHero />
       <ContactHub />
       <TrustBar />

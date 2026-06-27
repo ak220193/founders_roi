@@ -4,22 +4,22 @@ import React, { useEffect, useRef } from "react";
 import { motion, useInView, useMotionValue, useTransform, animate, useMotionTemplate } from "framer-motion";
 
 const stats = [
-  { value: 3.0, label: "Revenue Growth", suffix: "X", desc: "Sustained quarterly increase" },
+  { value: 8.0, label: "Revenue Growth", suffix: "X", desc: "Sustained quarterly increase" },
   { value: 50, label: "Acquisition Cost", suffix: "%", desc: "Reduction in ad spend" },
-  { value: 2.0, label: "Conversion Rate", suffix: "X", desc: "Optimization overhead" },
+  { value: 3.0, label: "Conversion Rate", suffix: "X", desc: "Optimization overhead" },
 ];
 
 export default function Results() {
   return (
-    <section className="w-full bg-[#030202] text-white py-32 px-4 sm:px-8 lg:px-16 relative overflow-hidden border-t border-neutral-900/60">
-      
+    <section className="w-full bg-bg-primary text-white py-32 px-4 sm:px-8 lg:px-16 relative overflow-hidden border-t border-neutral-900/60">
+
       {/* AMBIENT MESH GLOW */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-orange-500/[0.04] blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-orange-500/4 blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-24">
           <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">
-            Engineered for <span className="bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent">Exponential Scale</span>
+            Engineered for <span className="bg-linear-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent">Exponential Scale</span>
           </h2>
         </div>
 
@@ -37,7 +37,7 @@ function MetricCard({ stat, index }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => 
+  const rounded = useTransform(count, (latest) =>
     stat.suffix === "%" ? Math.round(latest) : latest.toFixed(1)
   );
 
@@ -76,17 +76,17 @@ function MetricCard({ stat, index }) {
           `,
         }}
       />
-      
+
       <div className="relative z-10 flex flex-col items-center text-center">
         <motion.div className="text-6xl font-black text-white mb-3">
           <motion.span>{rounded}</motion.span>
           <span className="text-orange-500">{stat.suffix}</span>
         </motion.div>
-        
+
         <h3 className="text-sm font-bold tracking-widest uppercase text-neutral-300 mb-2">
           {stat.label}
         </h3>
-        
+
         <p className="text-[11px] text-neutral-600 font-medium tracking-wide uppercase leading-relaxed max-w-[160px]">
           {stat.desc}
         </p>

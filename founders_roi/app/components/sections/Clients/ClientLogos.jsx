@@ -13,14 +13,14 @@ const clients = [
 
 export default function ClientLogos() {
   return (
-    <section className="w-full bg-[#030202] text-white py-32 relative border-t border-neutral-900/60 overflow-hidden max-w-7xl mx-auto">
+    <section className="w-full bg-bg-primary text-white py-32 relative border-t border-neutral-900/60 overflow-hidden max-w-7xl mx-auto">
       
       {/* BACKGROUND GRADIENT */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-orange-500/[0.03] blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-orange-500/3 blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 mb-20 text-center relative z-10">
         <h2 className="text-3xl md:text-5xl font-black mb-6">
-          Partners in <span className="bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent">Growth</span>
+          Partners in <span className="bg-linear-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent">Growth</span>
         </h2>
         <p className="text-neutral-500 max-w-lg mx-auto">
           A collective of ambitious brands we&apos;ve helped scale through precision engineering and creative strategy.
@@ -28,11 +28,11 @@ export default function ClientLogos() {
       </div>
 
       {/* SINGLE CONTAINER CAROUSEL */}
-      <div className="relative w-full max-w-[90rem] mx-auto py-12 bg-[#060606]/50 border-y border-neutral-900 backdrop-blur-xl">
+      <div className="relative w-full max-w-360 mx-auto py-12 bg-[#060606]/50 border-y border-neutral-900 backdrop-blur-xl">
         
         {/* Subtle Side Fades */}
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#030202] to-transparent z-10" />
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#030202] to-transparent z-10" />
+        <div className="absolute inset-y-0 left-0 w-32 bg-linear-to-r from-bg-primary to-transparent z-10" />
+        <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-bg-primary to-transparent z-10" />
 
         <motion.div 
           className="flex gap-8"

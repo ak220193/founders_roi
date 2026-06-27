@@ -97,21 +97,21 @@ export default function ProcessTimeline() {
   return (
     <section 
       ref={containerRef}
-      className="w-full bg-[#030202] text-white py-36 px-4 sm:px-8 lg:px-16 relative overflow-hidden select-none border-t border-neutral-900/60"
+      className="w-full bg-bg-primary text-white py-36 px-4 sm:px-8 lg:px-16 relative overflow-hidden select-none border-t border-neutral-900/60"
     >
       
       {/* ================= 🌟 PREMIUM SAAS RADIAL GLOW MESH LAYER 🌟 ================= */}
       {/* Upper Right Warm Brand Flare Orb */}
-      <div className="absolute top-[10%] -right-40 w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] rounded-full bg-gradient-to-br from-orange-500/[0.04] to-amber-600/0 blur-[130px] pointer-events-none z-0" />
+      <div className="absolute top-[10%] -right-40 w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] rounded-full bg-linear-to-br from-orange-500/4 to-amber-600/0 blur-[130px] pointer-events-none z-0" />
       
       {/* Deep Center Concentrated Spotlight Flare */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#f97316]/[0.015] blur-[160px] pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#f97316]/1.5 blur-[160px] pointer-events-none z-0" />
       
       {/* Lower Left Deep Structural Soft Accent Orb */}
-      <div className="absolute bottom-[10%] -left-40 w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] rounded-full bg-gradient-to-tr from-purple-500/[0.015] via-orange-500/[0.01] to-transparent blur-[140px] pointer-events-none z-0" />
+      <div className="absolute bottom-[10%] -left-40 w-[500px] h-[500px] sm:w-[700px] sm:h-[700px] rounded-full bg-linear-to-tr from-purple-500/1.5 via-orange-500/1 to-transparent blur-[140px] pointer-events-none z-0" />
       
       {/* Fine Geometric Grid Matrix Overlay to create high-tech depth over the gradients */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#141414_1px,transparent_1px),linear-gradient(to_bottom,#141414_1px,transparent_1px)] bg-[size:5rem_5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_80%,transparent_100%)] opacity-35 pointer-events-none z-0" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#141414_1px,transparent_1px),linear-gradient(to_bottom,#141414_1px,transparent_1px)] bg-size-[5rem_5rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_80%,transparent_100%)] opacity-35 pointer-events-none z-0" />
 
       {/* ================= HEADER ================= */}
       <div className="max-w-4xl mx-auto text-center mb-40 flex flex-col items-center relative z-10">
@@ -120,7 +120,7 @@ export default function ProcessTimeline() {
           <span>Execution Roadmap</span>
         </div>
         <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.15]">
-          From <span className="bg-gradient-to-r from-orange-400 via-amber-500 to-orange-600 bg-clip-text text-transparent">Enquiry to Enterprise Scale</span>
+          From <span className="bg-linear-to-r from-orange-400 via-amber-500 to-orange-600 bg-clip-text text-transparent">Enquiry to Enterprise Scale</span>
         </h2>
       </div>
 
@@ -132,7 +132,7 @@ export default function ProcessTimeline() {
           <div className="absolute inset-0 bg-neutral-900 rounded-full" />
           <motion.div 
             style={{ scaleY: scaleYSpring }}
-            className="absolute inset-0 bg-gradient-to-b from-orange-500 via-amber-500 to-orange-600 rounded-full origin-top shadow-[0_0_20px_rgba(249,115,22,0.6)]"
+            className="absolute inset-0 bg-linear-to-b from-orange-500 via-amber-500 to-orange-600 rounded-full origin-top shadow-[0_0_20px_rgba(249,115,22,0.6)]"
           />
         </div>
 
@@ -184,14 +184,14 @@ export default function ProcessTimeline() {
                     }`}
                   >
                     {/* CONIC GRADIENT CARD BORDER LIGHT */}
-                    <div className="absolute inset-0 p-[1px] rounded-2xl pointer-events-none z-0">
+                    <div className="absolute inset-0 p-px rounded-2xl pointer-events-none z-0">
                       <motion.div 
                         animate={isLive ? { rotate: 360 } : { rotate: 0 }}
                         transition={isLive ? { duration: 6, ease: "linear", repeat: Infinity } : { duration: 0 }}
                         style={{ originX: "50%", originY: "50%" }}
-                        className={`absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_60%,#f97316_85%,#fb923c_95%,transparent_100%)] transition-opacity duration-500 ${isLive ? 'opacity-100' : 'opacity-0'}`}
+                        className={`absolute -inset-full bg-[conic-gradient(from_0deg,transparent_60%,#f97316_85%,#fb923c_95%,transparent_100%)] transition-opacity duration-500 ${isLive ? 'opacity-100' : 'opacity-0'}`}
                       />
-                      <div className="absolute inset-[1px] bg-[#070707]/95 rounded-[15px] z-1" />
+                      <div className="absolute inset-px bg-[#070707]/95 rounded-[15px] z-1" />
                     </div>
 
                     {/* Content Block */}
@@ -215,9 +215,9 @@ export default function ProcessTimeline() {
                     </div>
 
                     {/* Micro-Progress Underline Bar */}
-                    <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-neutral-900 overflow-hidden z-10">
-                      <div className={`absolute inset-0 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 transition-all ease-out ${
-                        isAutoActive ? 'w-full duration-[4500ms]' : isCurrentlyHovered ? 'w-full duration-300' : 'w-0 duration-300'
+                    <div className="absolute bottom-0 left-0 right-0 h-px bg-neutral-900 overflow-hidden z-10">
+                      <div className={`absolute inset-0 bg-linear-to-r from-orange-500 via-amber-500 to-orange-600 transition-all ease-out ${
+                        isAutoActive ? 'w-full duration-4500' : isCurrentlyHovered ? 'w-full duration-300' : 'w-0 duration-300'
                       }`} />
                     </div>
 
@@ -228,7 +228,7 @@ export default function ProcessTimeline() {
                 <div className="absolute left-6 sm:left-1/2 top-8 sm:top-auto -translate-x-1/2 z-20">
                   <div className={`w-11 h-11 rounded-xl border flex items-center justify-center font-mono text-sm font-black shadow-2xl transition-all duration-500 ${
                     isLive 
-                      ? "bg-gradient-to-r from-orange-500 to-amber-500 border-transparent text-black scale-110 rotate-[6deg] shadow-[0_0_15px_rgba(249,115,22,0.4)]" 
+                      ? "bg-linear-to-r from-orange-500 to-amber-500 border-transparent text-black scale-110 rotate-6 shadow-[0_0_15px_rgba(249,115,22,0.4)]" 
                       : "bg-[#050505] border-neutral-800 text-neutral-500"
                   }`}>
                     {node.step}

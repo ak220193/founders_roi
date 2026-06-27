@@ -55,8 +55,8 @@ export default function ClientsCarousel() {
             Brands We’ve <span className="bg-linear-to-r from-orange-400 via-amber-500 to-orange-600 bg-clip-text text-transparent">Delivered For</span>
           </h2>
           <p className="mt-4 text-sm sm:text-base text-neutral-400 max-w-lg font-light leading-relaxed">
-    Powering fast-scaling startups and enterprises with high-impact, predictable growth systems.
-  </p>
+            Powering fast-scaling startups and enterprises with high-impact, predictable growth systems.
+          </p>
         </div>
 
         {/* MARQUEE CONTAINER */}
@@ -108,9 +108,10 @@ function LargeInteractiveLogoCard({ client }) {
           <Image
             src={encodeURI(client.logo)}
             alt={client.name}
-            fill
-            className="object-contain p-4  group-hover:opacity-100 transition-all duration-500"
-            sizes="(max-width: 768px) 280px, 320px"
+            width={320}
+            height={200}
+            style={{ width: "auto", height: "auto" }}
+            className="object-contain p-4 group-hover:opacity-100 transition-all duration-500"
           />
         </div>
         <div className="absolute inset-x-0 bottom-0 h-px bg-linear-to-r from-transparent via-white/10 to-transparent group-hover:via-orange-500/50 transition-all duration-500" />

@@ -5,10 +5,10 @@ import React from "react";
 import { Megaphone, TrendingUp, Palette, Code, Briefcase, Sparkles } from "lucide-react";
 
 const services = [
-  { icon: Megaphone, title: "Marketing" },
+  { icon: Megaphone, title: "Precise Marketing" },
   { icon: TrendingUp, title: "Sales Systems" },
   { icon: Palette, title: "Premium Branding" },
-  { icon: Code, title: "Tech Infrastructure" },
+  { icon: Code, title: "Website Development" },
   { icon: Briefcase, title: "End-to-End Business Development" }
 ];
 

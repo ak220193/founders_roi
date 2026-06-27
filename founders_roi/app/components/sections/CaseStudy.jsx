@@ -5,17 +5,17 @@ import { motion } from "framer-motion";
 const metrics = [
   {
     title: "Meta Ads Growth",
-    value: "420%",
+    value: "428%",
     width: "90%",
   },
   {
     title: "Conversion Optimization",
-    value: "280%",
+    value: "333%",
     width: "75%",
   },
   {
-    title: "Audience Reach",
-    value: "12M+",
+    title: "New Audience Expansion",
+    value: "25M+",
     width: "95%",
   },
 ];

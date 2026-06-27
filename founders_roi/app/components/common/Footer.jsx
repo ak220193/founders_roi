@@ -9,9 +9,21 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   const socialIcons = [
-    { Icon: FaInstagram, href: "#", label: "Instagram Link" },
-    { Icon: FaLinkedin, href: "#", label: "LinkedIn Profile" },
-    { Icon: FaTwitter, href: "#", label: "Twitter Feed" }
+    { 
+      Icon: FaInstagram, 
+      href: "https://www.instagram.com/foundersroi.in?igsh=MXZiM3RlYWlmdnR2MA%3D%3D&utm_source=qr", 
+      label: "Instagram Link" 
+    },
+    { 
+      Icon: FaLinkedin, 
+      href: "https://www.linkedin.com/in/foundersroidotin?utm_source=share_via&utm_content=profile&utm_medium=member_ios", 
+      label: "LinkedIn Profile" 
+    },
+    { 
+      Icon: FaTwitter, 
+      href: "#", 
+      label: "Twitter Feed" 
+    }
   ];
 
   return (
@@ -31,7 +43,7 @@ export default function Footer() {
 
             {/* ✅ LOGO + PREMIUM TYPOGRAPHY INLINE ROW WRAPPER */}
             <div className="flex items-center gap-4 group/brand">
-              <Link href="/" className="flex flex-col items-center justify-center  transition-transform duration-300 hover:scale-[1.01]">
+              <Link href="/" className="flex flex-col items-center justify-center transition-transform duration-300 hover:scale-[1.01]">
 
                 {/* Fixed Logo Frame Asset Box */}
                 <div className="relative w-40 h-40">
@@ -116,6 +128,8 @@ export default function Footer() {
                 <motion.a
                   key={i}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}

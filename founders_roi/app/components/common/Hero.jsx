@@ -98,7 +98,7 @@ export default function Hero() {
       "Consulting",
       "Sales Systems",
       "Marketing",
-      "Website Automation",
+      "Website Development",
       "Tech Infrastructure",
     ],
     [],

@@ -17,15 +17,15 @@ export default function ContactHub() {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 relative z-10">
 
         {/* LEFT: DOMINANT CHANNEL HUB */}
-        <div className="lg:col-span-8 p-[1px] rounded-[32px] bg-gradient-to-br from-neutral-800 via-orange-500/20 to-transparent">
+        <div className="lg:col-span-8 p-px rounded-[32px] bg-linear-to-br from-neutral-800 via-orange-500/20 to-transparent">
           <div className="h-full p-8 sm:p-16 rounded-[31px] bg-[#060606]/90 backdrop-blur-xl flex flex-col justify-between">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-500 text-xs font-black tracking-widest uppercase">
                 <Zap size={12} fill="currentColor" className="animate-pulse" /> Direct Connection
               </div>
-              <h2 className="text-4xl sm:text-7xl font-black tracking-tighter leading-[1] sm:leading-[0.9] text-white">
+              <h2 className="text-4xl sm:text-7xl font-black tracking-tighter leading-none sm:leading-[0.9] text-white">
                 Let&apos;s build <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-600">the future.</span>
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-400 to-amber-600">the future.</span>
               </h2>
               <p className="text-neutral-400 text-lg sm:text-xl max-w-lg leading-relaxed font-light">
                 Connect with our team instantly to schedule a direct audit or discuss business goals.
@@ -33,16 +33,16 @@ export default function ContactHub() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 sm:mt-16">
-              <ChannelCard
-                icon={Mail}
-                title="Secure Mailbox"
-                value="foundersroi.in@gmail.com"
+              <ChannelCard 
+                icon={Mail} 
+                title="Secure Mailbox" 
+                value="foundersroi.in@gmail.com" 
                 href="mailto:foundersroi.in@gmail.com?subject=Briefing%20Request%20-%20Founders%20ROI"
               />
-              <ChannelCard
-                icon={FaWhatsapp}
-                title="Instant WhatsApp"
-                value="+91 87545 82502"
+              <ChannelCard 
+                icon={FaWhatsapp} 
+                title="Instant WhatsApp" 
+                value="+91 87545 82502" 
                 href="https://wa.me/918754582502?text=Hello%20Founders%20ROI%2C%20I%20would%20like%20to%20discuss%20our%20business%20growth%20objectives."
               />
             </div>
@@ -56,20 +56,20 @@ export default function ContactHub() {
               <h3 className="font-bold text-xs uppercase tracking-widest text-neutral-500">Book Discovery</h3>
               <p className="text-xs text-neutral-600 mt-1">Select a platform to initiate secure video briefing</p>
             </div>
-
-            <PlatformButton
-              image={GoogleMeetLogo}
-              name="Google Meet"
+            
+            <PlatformButton 
+              image={GoogleMeetLogo} 
+              name="Google Meet" 
               href="/contact#contact-form"
             />
-            <PlatformButton
-              image={TeamsLogo}
-              name="Microsoft Teams"
+            <PlatformButton 
+              image={TeamsLogo} 
+              name="Microsoft Teams" 
               href="/contact#contact-form"
             />
           </div>
 
-          <div className="p-8 rounded-3xl bg-gradient-to-r from-orange-500/10 to-transparent flex items-center gap-4 border border-neutral-900">
+          <div className="p-8 rounded-3xl bg-linear-to-r from-orange-500/10 to-transparent flex items-center gap-4 border border-neutral-900">
             <div className="p-3 bg-orange-500/10 rounded-full"><Clock size={18} className="text-orange-500" /></div>
             <div>
               <p className="text-orange-500 text-[10px] font-black uppercase tracking-widest">Operational Status</p>
@@ -84,11 +84,11 @@ export default function ContactHub() {
 
 function ChannelCard({ icon: Icon, title, value, href }) {
   return (
-    <a
+    <a 
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative p-8 rounded-3xl bg-neutral-950/40 border border-neutral-900/60 hover:border-orange-500/30 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-xl cursor-pointer block"
+      className="group relative p-8 rounded-3xl bg-neutral-950/40 border border-neutral-900/60 hover:border-orange-500/30 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-xl cursor-pointer"
     >
       {/* Ambient hover flare */}
       <div className="absolute inset-0 bg-linear-to-br from-orange-500/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl" />
@@ -111,9 +111,9 @@ function ChannelCard({ icon: Icon, title, value, href }) {
 
 function PlatformButton({ image, name, href }) {
   return (
-    <Link
+    <Link 
       href={href}
-      className="w-full p-5 rounded-2xl bg-neutral-950 border border-neutral-900/60 hover:border-orange-500/30 hover:bg-neutral-900/30 transition-all duration-300 group flex items-center gap-4 cursor-pointer block"
+      className="w-full p-5 rounded-2xl bg-neutral-950 border border-neutral-900/60 hover:border-orange-500/30 hover:bg-neutral-900/30 transition-all duration-300 group flex items-center gap-4 cursor-pointer"
     >
       <div className="relative w-10 h-10 shrink-0 flex items-center justify-center">
         <Image

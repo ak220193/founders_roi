@@ -65,15 +65,15 @@ function AnimatedCounter({ value }) {
 }
 
 const metrics = [
-  { icon: TrendingUp, title: "Revenue Growth Volume", value: "+420%", label: "Validated Annual Lift" },
-  { icon: Activity, title: "Conversion Ratio Lift", value: "+280%", label: "Funnel Pipeline Delta" },
-  { icon: Users2, title: "Audience Expansion Matrix", value: "12M+", label: "Verified Gross Impressions" }
+  { icon: TrendingUp, title: "Revenue Growth Volume", value: "+428%", label: "Validated Annual Lift" },
+  { icon: Activity, title: "Conversion Ratio Lift", value: "+333%", label: "Funnel Pipeline Delta" },
+  { icon: Users2, title: "New Audience Expansion", value: "25M+", label: "Verified Gross Impressions" }
 ];
 
 export default function ProcessCaseStudy() {
   return (
-    <section className="w-full bg-[#030202] text-white py-32 px-4 sm:px-8 lg:px-16 relative overflow-hidden select-none border-t border-neutral-900/60">
-      <div className="absolute bottom-0 right-1/4 w-[700px] h-[400px] bg-purple-500/[0.02] blur-[150px] pointer-events-none rounded-full" />
+    <section className="w-full bg-bg-primary text-white py-32 px-4 sm:px-8 lg:px-16 relative overflow-hidden select-none border-t border-neutral-900/60">
+      <div className="absolute bottom-0 right-1/4 w-[700px] h-[400px] bg-purple-50/2 blur-[150px] pointer-events-none rounded-full" />
 
       {/* Inject Conic Border Rotation Keyframes */}
       <style dangerouslySetInnerHTML={{
@@ -118,11 +118,11 @@ export default function ProcessCaseStudy() {
               whileHover={{ y: -5 }}
               className="relative rounded-2xl bg-neutral-950/20 p-6 flex flex-col justify-between backdrop-blur-md shadow-2xl transition-all duration-500 overflow-hidden group border border-neutral-900/60 hover:border-transparent"
             >
-              
+
               {/* Rotating border animation container */}
               <div className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none z-0">
                 <div className="absolute top-1/2 left-1/2 w-[280%] aspect-square -translate-x-1/2 -translate-y-1/2 bg-[conic-gradient(from_0deg,transparent_60%,#f97316_85%,#fb923c_95%,transparent_100%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0 animate-border-rotate" />
-                <div className="absolute inset-[1px] bg-neutral-950 rounded-[15px] z-1" />
+                <div className="absolute inset-px bg-neutral-950 rounded-[15px] z-1" />
               </div>
 
               {/* Ambient backlight glow on hover */}
@@ -139,7 +139,7 @@ export default function ProcessCaseStudy() {
                 </div>
               </div>
 
-              <div className="relative z-10 text-4xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent mt-8 group-hover:scale-[1.02] transition-transform duration-300 origin-left">
+              <div className="relative z-10 text-4xl sm:text-5xl font-black tracking-tight bg-linear-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent mt-8 group-hover:scale-[1.02] transition-transform duration-300 origin-left">
                 <AnimatedCounter value={item.value} />
               </div>
             </motion.div>

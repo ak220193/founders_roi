@@ -6,10 +6,10 @@ import { ArrowRight, Sparkles, Calendar } from "lucide-react";
 
 export default function Cta() {
   return (
-    <section className="w-full py-32 px-4 sm:px-8 relative overflow-hidden bg-[#030202]">
+    <section className="w-full py-32 px-4 sm:px-8 relative overflow-hidden bg-bg-primary">
       
       {/* BACKGROUND MESH GLOW */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-orange-500/[0.03] blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-orange-500/3 blur-[160px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10 text-center">
         
@@ -22,7 +22,7 @@ export default function Cta() {
         {/* HEADLINE: Crisp, Authoritative, Action-Oriented */}
         <h2 className="text-4xl md:text-7xl font-black mb-8 tracking-tight leading-[1.1] text-white">
           Ready to achieve <br />
-          <span className="bg-gradient-to-r from-orange-400 via-amber-500 to-orange-600 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-orange-400 via-amber-500 to-orange-600 bg-clip-text text-transparent">
             market dominance?
           </span>
         </h2>
@@ -39,7 +39,7 @@ export default function Cta() {
           whileTap={{ scale: 0.98 }}
           className="group relative inline-flex items-center gap-3 px-10 py-4 bg-neutral-900 text-white font-bold uppercase tracking-widest rounded-full border border-neutral-700 hover:border-orange-500/50 transition-all duration-300 overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-amber-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-linear-to-r from-orange-600 to-amber-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
           <span className="relative z-10">Request Executive Briefing</span>
           <div className="relative z-10 p-1 rounded-full bg-black/20 group-hover:bg-white/20 transition-colors">

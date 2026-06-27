@@ -71,6 +71,7 @@ const ClientMarquee = () => {
                 alt={client.name}
                 width={160}
                 height={80}
+                style={{ width: "auto", height: "auto" }}
                 className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105 select-none"
               />
             </div>
