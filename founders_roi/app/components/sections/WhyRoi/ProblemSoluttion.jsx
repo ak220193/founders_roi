@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   TrendingDown,
   Crown,
@@ -81,7 +81,7 @@ export default function ProblemSolution() {
       <div className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] bg-orange-500/3 blur-[160px] rounded-full pointer-events-none" />
       
       {/* Fine grid lines backdrop */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#141414_1px,transparent_1px),linear-gradient(to_bottom,#141414_1px,transparent_1px)] bg-[size:4.5rem_4.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#141414_1px,transparent_1px),linear-gradient(to_bottom,#141414_1px,transparent_1px)] bg-size-[4.5rem_4.5rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         
@@ -223,7 +223,7 @@ export default function ProblemSolution() {
                           ? "bg-linear-to-r from-orange-500 to-amber-500 text-black border-transparent shadow-lg shadow-orange-950/40 rotate-[4deg]" 
                           : "bg-neutral-900 border-neutral-800 text-neutral-400"
                       }`}>
-                        <Icon size={20} className={`${isActive ? 'rotate-[12deg]' : ''}`} />
+                        <Icon size={20} className={`${isActive ? 'rotate-12' : ''}`} />
                       </div>
 
                       {/* Text info */}

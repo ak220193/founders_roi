@@ -12,7 +12,7 @@ export default function ThirdCta() {
       
       {/* ================= BACKGROUND GRAPHICS & MESH LAYERS ================= */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-linear-to-br from-orange-500/10 via-purple-500/2 to-transparent blur-[130px] pointer-events-none rounded-full" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#141414_1px,transparent_1px),linear-gradient(to_bottom,#141414_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_60%,transparent_100%)] opacity-30 pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#141414_1px,transparent_1px),linear-gradient(to_bottom,#141414_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_60%,transparent_100%)] opacity-30 pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10">
         
@@ -24,7 +24,7 @@ export default function ThirdCta() {
         >
           
           {/* 🌟 LIVE PERIMETER LIGHT RAIL ENGINE 🌟 */}
-          <div className="absolute inset-0 p-[1px] rounded-3xl pointer-events-none z-0">
+          <div className="absolute inset-0 p-px rounded-3xl pointer-events-none z-0">
             <motion.div 
               animate={{ rotate: 360 }}
               transition={{
@@ -33,10 +33,10 @@ export default function ThirdCta() {
                 repeat: Infinity,
               }}
               style={{ originX: "50%", originY: "50%" }}
-              className="absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_60%,#f97316_85%,#fb923c_95%,transparent_100%)] opacity-40 group-hover:opacity-100 transition-opacity duration-500"
+              className="absolute -inset-full bg-[conic-gradient(from_0deg,transparent_60%,#f97316_85%,#fb923c_95%,transparent_100%)] opacity-40 group-hover:opacity-100 transition-opacity duration-500"
             />
             {/* Inside Mask */}
-            <div className="absolute inset-[1px] bg-[#070707]/95 rounded-[23px] z-1" />
+            <div className="absolute inset-px bg-[#070707]/95 rounded-[23px] z-1" />
           </div>
 
           {/* Core Content Layout Elements Forced Above Border Stacking Contexts */}
@@ -74,7 +74,7 @@ export default function ThirdCta() {
                       : "border-neutral-800 bg-neutral-900/40 text-neutral-500"
                   }`}
                 >
-                  <item.icon size={13} className={`transition-transform duration-500 ${isHovered ? 'rotate-[6deg] scale-105' : ''}`} />
+                  <item.icon size={13} className={`transition-transform duration-500 ${isHovered ? 'rotate-6 scale-105' : ''}`} />
                   <span>{item.text}</span>
                 </div>
               ))}
@@ -128,7 +128,7 @@ function MagneticCtaButton({ href }) {
       className="relative inline-flex items-center gap-3 px-10 py-4 text-sm font-extrabold uppercase tracking-widest rounded-xl bg-linear-to-r from-orange-500 via-amber-500 to-orange-600 text-black shadow-xl shadow-orange-950/20 group overflow-hidden w-full sm:w-auto justify-center"
     >
       <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-15 transition-opacity duration-300 pointer-events-none" />
-      <div className="absolute -left-full top-0 h-full w-full bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-[shine_0.9s_ease-in-out] pointer-events-none" />
+      <div className="absolute -left-full top-0 h-full w-full bg-linear-to-r from-transparent via-white/30 to-transparent group-hover:animate-[shine_0.9s_ease-in-out] pointer-events-none" />
 
       <span className="relative z-10">Get Started Now</span>
       <ArrowUpRight size={16} className="text-black transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

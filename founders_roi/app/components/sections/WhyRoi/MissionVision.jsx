@@ -34,11 +34,11 @@ export default function MissionVision() {
   }, []);
 
   return (
-    <section className="w-full bg-[#030202] text-white py-32 px-4 sm:px-8 lg:px-16 relative overflow-hidden select-none border-b border-neutral-900/40">
+    <section className="w-full bg-bg-primary text-white py-32 px-4 sm:px-8 lg:px-16 relative overflow-hidden select-none border-b border-neutral-900/40">
       
       {/* ================= BACKGROUND GRADIENT MESH ================= */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-tr from-orange-500/[0.03] via-purple-500/[0.01] to-transparent blur-[160px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#141414_1px,transparent_1px),linear-gradient(to_bottom,#141414_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_60%,transparent_100%)] opacity-30 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-linear-to-tr from-orange-500/3 via-purple-500/1 to-transparent blur-[160px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#141414_1px,transparent_1px),linear-gradient(to_bottom,#141414_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_60%,transparent_100%)] opacity-30 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         
@@ -50,7 +50,7 @@ export default function MissionVision() {
           </div>
 
           <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl leading-[1.15] mb-5">
-            Our <span className="bg-gradient-to-r from-orange-400 via-amber-500 to-orange-600 bg-clip-text text-transparent">Mission & Vision</span>
+            Our <span className="bg-linear-to-r from-orange-400 via-amber-500 to-orange-600 bg-clip-text text-transparent">Mission & Vision</span>
           </h2>
 
           <p className="text-neutral-400 font-light max-w-xl text-sm sm:text-base leading-relaxed">
@@ -112,13 +112,13 @@ function SequentialBorderCard({ item, index, isLive }) {
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY }}
       whileHover={{ y: -4 }}
-      className="w-full h-full [perspective:1000px] cursor-pointer"
+      className="w-full h-full perspective-[1000px] cursor-pointer"
     >
       {/* Container Bento Body Frame */}
       <div className="relative w-full h-full rounded-2xl bg-neutral-950/20 p-8 sm:p-10 flex flex-col justify-between overflow-hidden backdrop-blur-md shadow-2xl group border border-neutral-900/40">
         
         {/* 🌟 SEQUENTIAL LIVE BORDER GLOW LIGHT ENGINE 🌟 */}
-        <div className="absolute inset-0 p-[1px] rounded-2xl pointer-events-none z-0">
+        <div className="absolute inset-0 p-px rounded-2xl pointer-events-none z-0">
           <motion.div 
             animate={isLive ? { rotate: 360 } : { rotate: 0 }}
             transition={isLive ? {
@@ -127,21 +127,21 @@ function SequentialBorderCard({ item, index, isLive }) {
               repeat: Infinity,
             } : { duration: 0 }}
             style={{ originX: "50%", originY: "50%" }}
-            className={`absolute inset-[-100%] bg-[conic-gradient(from_0deg,transparent_60%,#f97316_85%,#fb923c_95%,transparent_100%)] transition-opacity duration-700 ${isLive ? 'opacity-100' : 'opacity-0'}`}
+            className={`absolute -inset-full bg-[conic-gradient(from_0deg,transparent_60%,#f97316_85%,#fb923c_95%,transparent_100%)] transition-opacity duration-700 ${isLive ? 'opacity-100' : 'opacity-0'}`}
           />
           {/* Inside Content Mask */}
-          <div className="absolute inset-[1px] bg-[#070707]/95 rounded-[15px] z-1" />
+          <div className="absolute inset-px bg-[#070707]/95 rounded-[15px] z-1" />
         </div>
 
         {/* Content Structure Layer Wrapper */}
         <div className="space-y-6 relative z-10">
           
           {/* Dynamic Ambient Spotlights that brighten when the border turns active */}
-          <div className={`absolute inset-0 bg-gradient-to-br ${item.glow} to-transparent opacity-0 transition-opacity duration-700 pointer-events-none rounded-xl ${isLive ? 'opacity-100' : ''}`} />
+          <div className={`absolute inset-0 bg-linear-to-br ${item.glow} to-transparent opacity-0 transition-opacity duration-700 pointer-events-none rounded-xl ${isLive ? 'opacity-100' : ''}`} />
 
           {/* Icon Box Frame */}
           <div className={`inline-block p-4 rounded-xl bg-neutral-900 border border-neutral-800 shadow-md transition-all duration-500 ${isLive ? 'text-orange-400 border-orange-500/20 bg-neutral-900/80 scale-105' : 'text-neutral-500'}`}>
-            <item.icon size={22} className={`transition-transform duration-500 ${isLive ? 'rotate-[6deg]' : ''}`} />
+            <item.icon size={22} className={`transition-transform duration-500 ${isLive ? 'rotate-6' : ''}`} />
           </div>
 
           <div className="space-y-3">
@@ -155,8 +155,8 @@ function SequentialBorderCard({ item, index, isLive }) {
         </div>
 
         {/* Bottom Interactive Progress Indicator */}
-        <div className="relative mt-8 w-full h-[1px] bg-neutral-900 overflow-hidden z-10">
-          <div className={`absolute inset-0 bg-gradient-to-r from-orange-500 to-amber-500 transition-all ease-out ${isLive ? 'w-full duration-[6000ms]' : 'w-0 duration-300'}`} />
+        <div className="relative mt-8 w-full h-px bg-neutral-900 overflow-hidden z-10">
+          <div className={`absolute inset-0 bg-linear-to-r from-orange-500 to-amber-500 transition-all ease-out ${isLive ? 'w-full duration-6000' : 'w-0 duration-300'}`} />
         </div>
 
       </div>

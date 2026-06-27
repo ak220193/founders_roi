@@ -120,7 +120,7 @@ export default function AboutComponent() {
       <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-purple-500/2 blur-[150px] rounded-full pointer-events-none" />
 
       {/* Grid Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#141414_1px,transparent_1px),linear-gradient(to_bottom,#141414_1px,transparent_1px)] bg-[size:4.5rem_4.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-35 pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#141414_1px,transparent_1px),linear-gradient(to_bottom,#141414_1px,transparent_1px)] bg-size-[4.5rem_4.5rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-35 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-16 items-stretch relative z-10">
 
@@ -200,7 +200,7 @@ export default function AboutComponent() {
                 className="rounded-2xl border border-white/5 bg-neutral-900/40 hover:border-orange-500/30 p-4 sm:p-5 space-y-4 flex-1 flex flex-col justify-between cursor-pointer transition-all duration-300 relative group/chart overflow-hidden"
               >
                 {/* Micro glow sweep on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orange-500/5 to-transparent -translate-x-full group-hover/chart:animate-[shine_1.2s_ease-in-out] pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-r from-transparent via-orange-500/5 to-transparent -translate-x-full group-hover/chart:animate-[shine_1.2s_ease-in-out] pointer-events-none" />
 
                 <div className="flex justify-between items-center relative z-10">
                   <div className="space-y-1">
@@ -379,7 +379,7 @@ export default function AboutComponent() {
                       }`}
                   >
                     {/* Glowing effect inside */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${item.glow} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl`} />
+                    <div className={`absolute inset-0 bg-linear-to-br ${item.glow} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl`} />
 
                     {/* Icon container */}
                     <div className="p-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-orange-500 group-hover:text-orange-400 group-hover:border-orange-500/30 group-hover:bg-orange-500/10 transition-all duration-300 shrink-0 shadow-md">

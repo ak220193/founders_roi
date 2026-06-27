@@ -35,8 +35,8 @@ export default function GrowthFormula() {
     <section className="relative py-32 px-4 sm:px-8 lg:px-16 bg-bg-primary text-white overflow-hidden select-none border-b border-neutral-900/40">
 
       {/* ================= BACKGROUND GRADIENT MESH ENGINE ================= */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-orange-500/5 via-transparent to-transparent blur-[160px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#141414_1px,transparent_1px),linear-gradient(to_bottom,#141414_1px,transparent_1px)] bg-[size:4.5rem_4.5rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-linear-to-tr from-orange-500/5 via-transparent to-transparent blur-[160px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#141414_1px,transparent_1px),linear-gradient(to_bottom,#141414_1px,transparent_1px)] bg-size-[4.5rem_4.5rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
 
@@ -75,7 +75,7 @@ export default function GrowthFormula() {
                 className="relative rounded-2xl bg-neutral-950/20 p-8 sm:p-10 overflow-hidden backdrop-blur-md shadow-2xl flex flex-col justify-between cursor-pointer group h-full border border-neutral-900/40"
               >
                 {/* 🌟 LIVE ANIMATED CASING LIGHT TRACK 🌟 */}
-                <div className="absolute inset-0 p-[1px] rounded-2xl pointer-events-none z-0">
+                <div className="absolute inset-0 p-px rounded-2xl pointer-events-none z-0">
                   <motion.div
                     animate={isHovered ? { rotate: 360 } : { rotate: 0 }}
                     transition={{
@@ -84,10 +84,10 @@ export default function GrowthFormula() {
                       repeat: Infinity,
                     }}
                     style={{ originX: "50%", originY: "50%" }}
-                    className={`absolute inset-[-100%] ${item.glow} transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
+                    className={`absolute -inset-full ${item.glow} transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}
                   />
                   {/* Inner Core Shield Mask */}
-                  <div className="absolute inset-[1px] bg-[#070707]/95 rounded-[15px] z-1" />
+                  <div className="absolute inset-px bg-[#070707]/95 rounded-[15px] z-1" />
                 </div>
 
                 {/* Content Elements forced above background mask stacking contexts */}
@@ -101,7 +101,7 @@ export default function GrowthFormula() {
                           ? "bg-linear-to-r from-orange-500 to-amber-500 text-black border-transparent shadow-lg rotate-[-4deg]"
                           : "bg-neutral-900 border-neutral-800 text-orange-400"
                         }`}>
-                        <Icon size={20} />
+                      <Icon size={20} />
                       </div>
                     </div>
  
@@ -116,7 +116,7 @@ export default function GrowthFormula() {
                     </div>
                   </div>
                   {/* Fine Bottom Interactive Tracker Bar */}
-                  <div className="relative w-full h-[1px] bg-neutral-900 overflow-hidden mt-4">
+                  <div className="relative w-full h-px bg-neutral-900 overflow-hidden mt-4">
                     <div className={`absolute inset-0 bg-linear-to-r from-orange-500 via-amber-500 to-orange-600 transition-all duration-500 ease-out ${isHovered ? 'w-full' : 'w-0'}`} />
                   </div>
                 </div>
