@@ -2,6 +2,7 @@ import { Outfit, Sora } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google"; // ✅ Optimal performance tracker injection
 
 // ✅ Fonts (Optimized)
 const outfit = Outfit({
@@ -96,6 +97,10 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
 
+        {/* ✅ Google Analytics Tracking Engine (Non-blocking script loader) */}
+        {/* Replace G-XXXXXXXXXX with your actual GA4 Tracking ID from the Google Analytics console */}
+        <GoogleAnalytics gaId="G-WH5TSLEWG4" />
+
         {/* ✅ Structured Data (SEO Boost) */}
         <script
           type="application/ld+json"
@@ -105,7 +110,7 @@ export default function RootLayout({ children }) {
               "@type": "Organization",
               name: "Founders ROI",
               url: "https://www.foundersroi.com",
-              logo: "https://www.foundersroi.com/logo/logo.png", // Updated path to match your footer asset structure safely
+              logo: "https://www.foundersroi.com/logo/logo.png",
             }),
           }}
         />
