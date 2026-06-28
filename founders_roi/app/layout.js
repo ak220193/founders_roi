@@ -19,7 +19,7 @@ const sora = Sora({
 
 // ✅ SEO Metadata
 export const metadata = {
-  metadataBase: new URL("https://www.foundersroi.com"),
+  metadataBase: new URL("https://www.foundersroi.in"),
 
   title: {
     default: "Founders ROI | Business Consulting & Digital Growth Agency",
@@ -51,7 +51,7 @@ export const metadata = {
     title: "Founders ROI",
     description:
       "Scale your business with strategy, technology, and marketing.",
-    url: "https://www.foundersroi.com",
+    url: "https://www.foundersroi.in",
     siteName: "Founders ROI",
     images: [
       {
@@ -78,7 +78,7 @@ export const metadata = {
   },
 
   alternates: {
-    canonical: "https://www.foundersroi.com",
+    canonical: "https://www.foundersroi.in",
   },
 };
 
@@ -109,8 +109,8 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Founders ROI",
-              url: "https://www.foundersroi.com",
-              logo: "https://www.foundersroi.com/logo/logo.png",
+              url: "https://www.foundersroi.in",
+              logo: "https://www.foundersroi.in/logo/logo.png",
             }),
           }}
         />

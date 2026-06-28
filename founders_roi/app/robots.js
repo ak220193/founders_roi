@@ -7,6 +7,6 @@ export default function robots() {
         "/api/", // Prevents search indexers from crawling background backend logic routes
       ],
     },
-    sitemap: "https://www.foundersroi.com/sitemap.xml",
+    sitemap: "https://www.foundersroi.in/sitemap.xml",
   };
 }

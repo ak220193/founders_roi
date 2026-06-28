@@ -14,6 +14,8 @@ const marqueeRowOne = [
   { name: "EWS Logo", logo: "/clientImages/EWS logo.png" },
   { name: "Fresh Frames", logo: "/clientImages/freshframes.in.jpg" },
   { name: "Leo Photography", logo: "/clientImages/LeoPhotogrpahy.jpg" },
+  { name: "MagicLens Studio", logo: "/clientImages/MagicLens.jpg" },
+  { name: "Infocus The Studio", logo: "/clientImages/Infocus.jpg" },
 ];
 
 const marqueeRowTwo = [
@@ -28,6 +30,9 @@ const marqueeRowTwo = [
   { name: "Kamarajar College of Nursing", logo: "/clientImages/KSAnursing.jpeg" },
   { name: "Kamarajar College of Pharmacy", logo: "/clientImages/KSA.jpeg" },
   { name: "Webxode Technologies", logo: "/clientImages/webxodelogocropped-removebg-preview.png" },
+  { name: "Zero One Photography", logo: "/clientImages/ZeroOnePhotography.jpeg" },
+  { name: "AK Photography", logo: "/clientImages/AKPhotography.png" },
+  { name: "Aj Uday Clickography", logo: "/clientImages/AJClickography.png" },
 ];
 
 

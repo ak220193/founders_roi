@@ -276,7 +276,7 @@ export default function Hero() {
             </div>
 
             {/* Heading */}
-            <h1 className="text-[34px] font-black tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[68px] leading-[1.1] mb-6">
+            <h1 className="text-2xl font-black tracking-tight text-white sm:text-5xl md:text-5xl lg:text-[40px] xl:text-[50px] leading-[1.1] mb-6">
               We Build NxtGen <br />
               <span className="relative inline-block bg-linear-to-r from-orange-400 via-amber-500 to-orange-500 bg-clip-text text-transparent min-h-[1.2em] pb-1">
                 {displayedText}

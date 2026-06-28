@@ -1,5 +1,5 @@
 export default async function sitemap() {
-  const baseUrl = "https://www.foundersroi.com";
+  const baseUrl = "https://www.foundersroi.in";
 
   // Explicitly mapping all your navigational routes
   const routes = [
