@@ -185,6 +185,7 @@ export default function Hero() {
           playsInline
           className="absolute inset-0 h-full w-full object-cover opacity-50 select-none mix-blend-screen"
         >
+          <source src="https://videos.pexels.com/video-files/3129671/3129671-hd_1920_1080_30fps.mp4" type="video/mp4" />
           <source src="/bg-vdo/pexels-bg.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-black" />
@@ -251,7 +252,7 @@ export default function Hero() {
               initial={{ scaleY: 0 }}
               animate={{ scaleY: 1 }}
               transition={{ duration: 1.2, delay: 0.4, ease: "easeInOut" }}
-              className="w-[1px] h-16 bg-linear-to-b from-transparent via-white/10 to-transparent origin-center my-2"
+              className="w-px h-16 bg-linear-to-b from-transparent via-white/10 to-transparent origin-center my-2"
             />
             <Counter value="6000%" label="ROAS Delivered" align="right" />
 
@@ -322,7 +323,7 @@ export default function Hero() {
               initial={{ scaleY: 0 }}
               animate={{ scaleY: 1 }}
               transition={{ duration: 1.2, delay: 0.4, ease: "easeInOut" }}
-              className="w-[1px] h-16 bg-linear-to-b from-transparent via-white/10 to-transparent origin-center my-2"
+              className="w-px h-16 bg-linear-to-b from-transparent via-white/10 to-transparent origin-center my-2"
             />
             <Counter value="3.3 CR" label="Revenue Generated" align="left" />
 
@@ -359,9 +360,17 @@ export default function Hero() {
           {/* Bento Pill 1: High Contrast Orange Card with Index selectors & Auto-Cycling Text */}
           <div className="group/pill relative flex flex-col sm:flex-row items-center gap-4 bg-linear-to-r from-orange-500 to-amber-500 text-black px-6 py-4 sm:py-3.5 rounded-2xl sm:rounded-full w-full md:w-[480px] min-h-[72px] sm:min-h-[58px] shadow-[0_10px_35px_rgba(249,115,22,0.15)] hover:shadow-[0_15px_40px_rgba(249,115,22,0.25)] transition-all duration-300 cursor-pointer">
             <div className="flex items-center gap-1.5 shrink-0">
-              <span className={`w-5 h-5 rounded-full border flex items-center justify-center text-[10px] font-bold transition-all duration-300 ${activePillIndex === 0 ? "bg-black text-orange-400 border-black" : "bg-black/5 border-black/10"}`}>1</span>
-              <span className={`w-5 h-5 rounded-full border flex items-center justify-center text-[10px] font-bold transition-all duration-300 ${activePillIndex === 1 ? "bg-black text-orange-400 border-black" : "bg-black/5 border-black/10"}`}>2</span>
-              <span className={`w-5 h-5 rounded-full border flex items-center justify-center text-[10px] font-bold transition-all duration-300 ${activePillIndex === 2 ? "bg-black text-orange-400 border-black" : "bg-black/5 border-black/10"}`}>3</span>
+              {pillMessages.map((_, idx) => (
+                <span
+                  key={idx}
+                  className={`w-5 h-5 rounded-full border flex items-center justify-center text-[10px] font-bold transition-all duration-300 ${activePillIndex === idx
+                      ? "bg-black text-orange-400 border-black"
+                      : "bg-black/5 border-black/10"
+                    }`}
+                >
+                  {idx + 1}
+                </span>
+              ))}
             </div>
 
             {/* Smooth text transition container */}
