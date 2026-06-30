@@ -325,7 +325,7 @@ export default function Hero() {
               transition={{ duration: 1.2, delay: 0.4, ease: "easeInOut" }}
               className="w-px h-16 bg-linear-to-b from-transparent via-white/10 to-transparent origin-center my-2"
             />
-            <Counter value="3.3 CR" label="Revenue Generated" align="left" />
+            <Counter value="6.3 CR" label="Revenue Generated" align="left" />
 
             {/* Right Console Navigation Cue */}
             <div className="absolute right-[-20px] top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border border-white/5 flex items-center justify-center bg-black/40 text-white/20 hover:text-white/60 hover:border-white/20 transition-all duration-300 cursor-pointer select-none">
@@ -346,7 +346,7 @@ export default function Hero() {
             <Counter value="8X" label="Revenue Growth" align="center" />
             <Counter value="6000%" label="ROAS Delivered" align="center" />
             <Counter value="125+" label="Campaigns Scaled" align="center" />
-            <Counter value="3.3 CR" label="Revenue Generated" align="center" />
+            <Counter value="6.3 CR" label="Revenue Generated" align="center" />
           </div>
         </motion.div>
 

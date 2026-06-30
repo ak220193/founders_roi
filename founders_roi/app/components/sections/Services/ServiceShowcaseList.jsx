@@ -169,7 +169,7 @@ const comprehensiveServices = [
       { value: "₹43.4L+", label: "Pipeline Revenue" },
       { value: "10k+", label: "Leads Generated" }
     ],
-    imgSrc: "/Services/Capicure.png"
+    imgSrc: "/Services/capicuremain.png"
   },
   {
     id: "tourism",

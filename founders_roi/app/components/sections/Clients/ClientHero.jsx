@@ -16,6 +16,7 @@ const marqueeRowOne = [
   { name: "Leo Photography", logo: "/clientImages/LeoPhotogrpahy.jpg" },
   { name: "MagicLens Studio", logo: "/clientImages/MagicLens.jpg" },
   { name: "Infocus The Studio", logo: "/clientImages/Infocus.jpg" },
+  { name: "KSA group of Instituions", logo: "/clientImages/ksafnal.PNG" },
 ];
 
 const marqueeRowTwo = [
@@ -33,6 +34,7 @@ const marqueeRowTwo = [
   { name: "Zero One Photography", logo: "/clientImages/ZeroOnePhotography.jpeg" },
   { name: "AK Photography", logo: "/clientImages/AKPhotography.png" },
   { name: "Aj Uday Clickography", logo: "/clientImages/AJClickography.png" },
+  { name: "KSA Maritime college", logo: "/clientImages/PKimsefnal.PNG" },
 ];
 
 

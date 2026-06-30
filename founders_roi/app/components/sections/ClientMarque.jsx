@@ -28,6 +28,8 @@ const clients = [
   { name: "Zero One Photography", logo: "/clientImages/ZeroOnePhotography.jpeg" },
   { name: "AK Photography", logo: "/clientImages/AKPhotography.png" },
   { name: "Aj Uday Clickography", logo: "/clientImages/AJClickography.png" },
+  { name: "KSA group of Instituions", logo: "/clientImages/ksafnal.PNG" },
+  { name: "KSA Maritime college", logo: "/clientImages/PKimsefnal.PNG" }
 ];
 
 const ClientMarquee = () => {
