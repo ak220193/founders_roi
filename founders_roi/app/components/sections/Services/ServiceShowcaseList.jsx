@@ -165,7 +165,7 @@ const comprehensiveServices = [
     desc: "Specifically engineered for professional photography operations. We replace erratic, generic campaigns with high-impact funnel flows built around clear portfolios. Targeting parameters route qualified leads automatically while keeping cost-per-lead low.",
     deliverables: ["Meta Creative Scaling", "Studio Funnel Architecture", "High-Fidelity Portfolio Ads"],
     metrics: [
-      { value: "4,488%", label: "Average ROAS" },
+      { value: "5,067%", label: "Average ROAS" },
       { value: "₹43.4L+", label: "Pipeline Revenue" },
       { value: "10k+", label: "Leads Generated" }
     ],
@@ -181,7 +181,7 @@ const comprehensiveServices = [
     desc: "A custom lead qualification and conversion matrix designed to attract domestic and international travelers. We bypass bargain-seekers to secure high-ticket seasonal bookings automatically.",
     deliverables: ["Luxury Destination Funnels", "Automatic Lead Filters", "CRM Flow Automation"],
     metrics: [
-      { value: "5,067%", label: "Peak Campaign ROAS" },
+      { value: "4,488%", label: "Peak Campaign ROAS" },
       { value: "₹43.3L", label: "Closed Revenue" },
       { value: "₹39", label: "Avg Cost / Lead" }
     ],
